@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="6" passed="6" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2025-10-29T16:00:00 IST" name="Default suite" finished-at="2025-10-29T16:01:06 IST" duration-ms="66038">
+    <groups>
+    </groups>
+    <test started-at="2025-10-29T16:00:00 IST" name="Default test" finished-at="2025-10-29T16:01:06 IST" duration-ms="66038">
+      <class name="test.BMSTest">
+        <test-method is-config="true" signature="verifsetup()[pri:0, instance:test.BMSTest@222545dc]" started-at="2025-10-29T16:00:00 IST" name="verifsetup" finished-at="2025-10-29T16:00:12 IST" duration-ms="11715" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifsetup -->
+        <test-method signature="VeriFURL()[pri:0, instance:test.BMSTest@222545dc]" started-at="2025-10-29T16:00:12 IST" name="VeriFURL" finished-at="2025-10-29T16:00:12 IST" duration-ms="8" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- VeriFURL -->
+        <test-method signature="TittleVeif()[pri:1, instance:test.BMSTest@222545dc]" started-at="2025-10-29T16:00:12 IST" name="TittleVeif" finished-at="2025-10-29T16:00:12 IST" duration-ms="13" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TittleVeif -->
+        <test-method signature="VeriFyBrokenLinks()[pri:2, instance:test.BMSTest@222545dc]" started-at="2025-10-29T16:00:12 IST" name="VeriFyBrokenLinks" finished-at="2025-10-29T16:00:15 IST" duration-ms="3092" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- VeriFyBrokenLinks -->
+        <test-method signature="verifLogin()[pri:3, instance:test.BMSTest@222545dc]" started-at="2025-10-29T16:00:15 IST" name="verifLogin" finished-at="2025-10-29T16:00:25 IST" duration-ms="10651" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifLogin -->
+        <test-method signature="VerifEditMobileLogin()[pri:9, instance:test.BMSTest@222545dc]" started-at="2025-10-29T16:00:25 IST" name="VerifEditMobileLogin" finished-at="2025-10-29T16:00:30 IST" duration-ms="5032" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- VerifEditMobileLogin -->
+        <test-method signature="VerifResendOTP()[pri:10, instance:test.BMSTest@222545dc]" started-at="2025-10-29T16:00:30 IST" name="VerifResendOTP" finished-at="2025-10-29T16:01:06 IST" duration-ms="35170" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- VerifResendOTP -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:test.BMSTest@222545dc]" started-at="2025-10-29T16:01:06 IST" name="teardown" finished-at="2025-10-29T16:01:06 IST" duration-ms="304" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+      </class> <!-- test.BMSTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
