@@ -10,6 +10,8 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.List;
 
+import org.testng.Assert;
+
 
 public class BMSPage {
 
@@ -197,10 +199,12 @@ public class BMSPage {
 	  }
 	  public void EditMobileLogin() throws Exception
 	  {
+		  Thread.sleep(2000);
 		  page.navigate("https://bms.mapskil.com/");
 		  page.waitForLoadState();
-		  page.locator("//*[@id=\"root\"]/header/div[2]/div/div/div[2]/div[4]/button/p").click();
-		  page.locator("//*[@id=\"root\"]/div[2]/div[2]/div[1]/div/div[2]/div[3]/div/div[2]/div/button/p").click();
+		  page.locator("//*[@id=\"root\"]/header/div[2]/div/div/div[2]/div[3]/button").click();
+		  Thread.sleep(2000);
+		  page.locator("//*[@id=\"root\"]/div[2]/div[2]/div[1]/div/div[2]/div[3]/div/div[2]/div/button").click();
 		  Thread.sleep(3000);
 		   page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Login/ Sign Up")).click();
 		      page.getByPlaceholder("Enter Mobile Number").click();
@@ -217,6 +221,29 @@ public class BMSPage {
 	      page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Send OTP")).click();
 	      Thread.sleep(35000);
 	      assertThat(page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Resend OTP"))).isVisible();
+	  }
+	  public void InvalidOTP() throws Exception
+	  {
+		  page.reload();
+		  page.waitForLoadState();
+		  Thread.sleep(2000);
+		  page.locator("//*[@id=\"root\"]/header/div[2]/div/div/div[2]/div[3]/button").click();
+		  page.waitForLoadState();
+		  page.getByPlaceholder("Enter Mobile Number").click();
+	      page.getByPlaceholder("Enter Mobile Number").fill("9778350198");
+	      page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Send OTP")).click();
+	      Thread.sleep(2000);
+	      page.getByRole(AriaRole.TEXTBOX).first().fill("0");
+	      page.getByRole(AriaRole.TEXTBOX).nth(1).fill("0");
+	      page.getByRole(AriaRole.TEXTBOX).nth(2).fill("0");
+	      page.getByRole(AriaRole.TEXTBOX).nth(3).fill("0");
+	      Thread.sleep(2000);
+	      page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Login")).click();
+	      Thread.sleep(1000);
+	      String toastText = page.textContent("text=OTP Verification Failed");
+	      Assert.assertEquals(toastText.trim(), "OTP Verification Failed",
+	              "Toast message text does not match expected value.");
+	      
 	  }
   }
 

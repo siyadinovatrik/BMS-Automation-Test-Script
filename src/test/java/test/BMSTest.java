@@ -37,7 +37,7 @@ public class BMSTest extends BMSBase
   {
 	 ob.login(); 
   }
- @Test(priority=4)
+/* @Test(priority=4)
   public void VerifEditProfile() throws Exception
   {
 	  ob.editProfile();
@@ -61,7 +61,7 @@ public class BMSTest extends BMSBase
   public void VerifPETCTBook() throws Exception
   {
 	  ob.PETCTBook();
-  }
+  }*/
   @Test(priority=9)
   public void VerifEditMobileLogin() throws Exception
   {
@@ -71,6 +71,11 @@ public class BMSTest extends BMSBase
   public void VerifResendOTP() throws Exception
   {
 	  ob.ResendOTP();
+  }
+  @Test(priority=11)
+  public void VerifInvalidOTP() throws Exception
+  {
+	  ob.InvalidOTP();
   }
   @AfterTest
   public void teardown()

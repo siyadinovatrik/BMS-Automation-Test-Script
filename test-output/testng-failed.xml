@@ -7,7 +7,7 @@
         <methods>
           <include name="teardown"/>
           <include name="verifsetup"/>
-          <include name="VerifPETCTBook"/>
+          <include name="VerifInvalidOTP"/>
         </methods>
       </class> <!-- test.BMSTest -->
     </classes>
