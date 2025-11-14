@@ -5,9 +5,9 @@
     <classes>
       <class name="test.BMSTest">
         <methods>
+          <include name="VerifCheckNavigationFlow"/>
           <include name="teardown"/>
           <include name="verifsetup"/>
-          <include name="VerifInvalidOTP"/>
         </methods>
       </class> <!-- test.BMSTest -->
     </classes>
