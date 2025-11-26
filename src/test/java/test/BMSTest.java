@@ -31,13 +31,13 @@ public class BMSTest extends BMSBase
   public void VeriFyBrokenLinks() throws Exception
   {
 	  ob.VerifBrokenLikn();
-  }
+  } 
   @Test(priority=3)
   public void VerifCheckNavigationFlow() throws Exception
   {
 	  ob.CheckNavigationFlow();
   }
-/*  @Test(priority=4)
+  @Test(priority=4)
   public void verifLogin() throws Exception
   {
 	 ob.login(); 
@@ -51,37 +51,52 @@ public class BMSTest extends BMSBase
   public void VerifAddaddress() throws Exception
   {
 	  ob.Addaddress();
-  }  
+  } 
   @Test(priority=7)
+   public void verifRemoveAddress()
+   {
+	  ob.removeAddress();
+   }
+  @Test(priority=8)
   public void VerifMRIBook() throws Exception
   {
 	  ob.MRIBook();
   }
-  @Test(priority=8)
+  @Test(priority=9)
   public void VerifCTBook() throws Exception
   {
 	  ob.CTbook();
   } 
-  @Test(priority=9)
+  @Test(priority=10)
   public void VerifPETCTBook() throws Exception
   {
 	  ob.PETCTBook();
   }
-  @Test(priority=10)
+  @Test(priority=11)
   public void VerifEditMobileLogin() throws Exception
   {
 	  ob.EditMobileLogin();
   }
-  @Test(priority=11)
+  @Test(priority=12)
   public void VerifResendOTP() throws Exception
   {
 	  ob.ResendOTP();
   }
-  @Test(priority=12)
+  @Test(priority=13)
   public void VerifInvalidOTP() throws Exception
   {
 	  ob.InvalidOTP();
-  }*/
+  }
+  @Test(priority=14)
+  public void VerifMasterHealthchckup() throws Exception
+  {
+	  ob.BookMasterHealthcheckup();
+  }
+  @Test(priority=15)
+  public void VerifXRAYBook() throws Exception
+  {
+	  ob.XRAYBook();
+  }
   @AfterTest
   public void teardown()
   {

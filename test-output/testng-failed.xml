@@ -5,7 +5,7 @@
     <classes>
       <class name="test.BMSTest">
         <methods>
-          <include name="VerifCheckNavigationFlow"/>
+          <include name="VerifXRAYBook"/>
           <include name="teardown"/>
           <include name="verifsetup"/>
         </methods>
