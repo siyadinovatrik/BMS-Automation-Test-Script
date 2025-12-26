@@ -5,9 +5,11 @@
     <classes>
       <class name="test.BMSTest">
         <methods>
-          <include name="VerifXRAYBook"/>
+          <include name="VerifMRIAbdomenBook"/>
+          <include name="VerifCTBook"/>
           <include name="teardown"/>
           <include name="verifsetup"/>
+          <include name="VerifMRIBrainBook"/>
         </methods>
       </class> <!-- test.BMSTest -->
     </classes>

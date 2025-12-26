@@ -1,21 +1,411 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="4" passed="1" failed="3" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-11-26T13:10:32 IST" name="Default suite" finished-at="2025-11-26T13:11:07 IST" duration-ms="34972">
+  <suite started-at="2025-12-26T17:56:45 IST" name="Default suite" finished-at="2025-12-26T17:57:34 IST" duration-ms="48907">
     <groups>
     </groups>
-    <test started-at="2025-11-26T13:10:32 IST" name="Default test" finished-at="2025-11-26T13:11:07 IST" duration-ms="34972">
+    <test started-at="2025-12-26T17:56:45 IST" name="Default test" finished-at="2025-12-26T17:57:34 IST" duration-ms="48907">
       <class name="test.BMSTest">
-        <test-method is-config="true" signature="verifsetup()[pri:0, instance:test.BMSTest@6b2ea799]" started-at="2025-11-26T13:10:32 IST" name="verifsetup" finished-at="2025-11-26T13:10:42 IST" duration-ms="9813" status="PASS">
+        <test-method is-config="true" signature="verifsetup()[pri:0, instance:test.BMSTest@36fc695d]" started-at="2025-12-26T17:56:45 IST" name="verifsetup" finished-at="2025-12-26T17:57:10 IST" duration-ms="25018" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifsetup -->
-        <test-method signature="VerifXRAYBook()[pri:0, instance:test.BMSTest@6b2ea799]" started-at="2025-11-26T13:10:42 IST" name="VerifXRAYBook" finished-at="2025-11-26T13:11:07 IST" duration-ms="24732" status="PASS">
+        <test-method signature="VeriFURL()[pri:0, instance:test.BMSTest@36fc695d]" started-at="2025-12-26T17:57:10 IST" name="VeriFURL" finished-at="2025-12-26T17:57:10 IST" duration-ms="20" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- VerifXRAYBook -->
-        <test-method is-config="true" signature="teardown()[pri:0, instance:test.BMSTest@6b2ea799]" started-at="2025-11-26T13:11:07 IST" name="teardown" finished-at="2025-11-26T13:11:07 IST" duration-ms="385" status="PASS">
+        </test-method> <!-- VeriFURL -->
+        <test-method signature="VerifMRIAbdomenBook()[pri:8, instance:test.BMSTest@36fc695d]" started-at="2025-12-26T17:57:10 IST" name="VerifMRIAbdomenBook" finished-at="2025-12-26T17:57:16 IST" duration-ms="5476" status="FAIL">
+          <exception class="com.microsoft.playwright.PlaywrightException">
+            <message>
+              <![CDATA[Error {
+  message='Error: strict mode violation: getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("MRI Scan")) resolved to 2 elements:
+    1) <button tabindex="0" type="button" class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary css-1ujsas3">…</button> aka getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("MRI Scan").setExact(true))
+    2) <button tabindex="0" type="button" class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary css-1eyd4kp">…</button> aka getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Book an MRI Scan"))
+
+  name='Error
+  stack='Error: Error: strict mode violation: getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("MRI Scan")) resolved to 2 elements:
+    1) <button tabindex="0" type="button" class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary css-1ujsas3">…</button> aka getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("MRI Scan").setExact(true))
+    2) <button tabindex="0" type="button" class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary css-1eyd4kp">…</button> aka getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Book an MRI Scan"))
+
+    at CRExecutionContext.evaluateWithArguments (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-11370713726690388839\package\lib\server\chromium\crExecutionContext.js:92:33)
+    at async LongStandingScope._race (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-11370713726690388839\package\lib\utils\manualPromise.js:96:14)
+    at async evaluateExpression (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-11370713726690388839\package\lib\server\javascript.js:242:12)
+    at async C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-11370713726690388839\package\lib\server\frames.js:953:22
+    at async Frame.retryWithProgressAndTimeouts (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-11370713726690388839\package\lib\server\frames.js:923:24)
+    at async C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-11370713726690388839\package\lib\server\frames.js:1170:29
+    at async ProgressController.run (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-11370713726690388839\package\lib\server\progress.js:82:22)
+    at async FrameDispatcher.hover (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-11370713726690388839\package\lib\server\dispatchers\frameDispatcher.js:236:12)
+    at async LongStandingScope._race (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-11370713726690388839\package\lib\utils\manualPromise.js:96:14)
+    at async FrameDispatcher._handleCommand (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-11370713726690388839\package\lib\server\dispatchers\dispatcher.js:96:14)
+}
+Call log:
+- waiting for getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("MRI Scan"))
+]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[com.microsoft.playwright.PlaywrightException: Error {
+  message='Error: strict mode violation: getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("MRI Scan")) resolved to 2 elements:
+    1) <button tabindex="0" type="button" class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary css-1ujsas3">…</button> aka getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("MRI Scan").setExact(true))
+    2) <button tabindex="0" type="button" class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary css-1eyd4kp">…</button> aka getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Book an MRI Scan"))
+
+  name='Error
+  stack='Error: Error: strict mode violation: getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("MRI Scan")) resolved to 2 elements:
+    1) <button tabindex="0" type="button" class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary css-1ujsas3">…</button> aka getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("MRI Scan").setExact(true))
+    2) <button tabindex="0" type="button" class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary css-1eyd4kp">…</button> aka getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Book an MRI Scan"))
+
+    at CRExecutionContext.evaluateWithArguments (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-11370713726690388839\package\lib\server\chromium\crExecutionContext.js:92:33)
+    at async LongStandingScope._race (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-11370713726690388839\package\lib\utils\manualPromise.js:96:14)
+    at async evaluateExpression (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-11370713726690388839\package\lib\server\javascript.js:242:12)
+    at async C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-11370713726690388839\package\lib\server\frames.js:953:22
+    at async Frame.retryWithProgressAndTimeouts (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-11370713726690388839\package\lib\server\frames.js:923:24)
+    at async C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-11370713726690388839\package\lib\server\frames.js:1170:29
+    at async ProgressController.run (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-11370713726690388839\package\lib\server\progress.js:82:22)
+    at async FrameDispatcher.hover (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-11370713726690388839\package\lib\server\dispatchers\frameDispatcher.js:236:12)
+    at async LongStandingScope._race (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-11370713726690388839\package\lib\utils\manualPromise.js:96:14)
+    at async FrameDispatcher._handleCommand (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-11370713726690388839\package\lib\server\dispatchers\dispatcher.js:96:14)
+}
+Call log:
+- waiting for getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("MRI Scan"))
+
+at com.microsoft.playwright.impl.WaitableResult.get(WaitableResult.java:56)
+at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:120)
+at com.microsoft.playwright.impl.Connection.sendMessage(Connection.java:130)
+at com.microsoft.playwright.impl.ChannelOwner.sendMessage(ChannelOwner.java:106)
+at com.microsoft.playwright.impl.FrameImpl.hoverImpl(FrameImpl.java:482)
+at com.microsoft.playwright.impl.FrameImpl.lambda$hover$19(FrameImpl.java:473)
+at com.microsoft.playwright.impl.LoggingSupport.lambda$withLogging$0(LoggingSupport.java:36)
+at com.microsoft.playwright.impl.LoggingSupport.withLogging(LoggingSupport.java:47)
+at com.microsoft.playwright.impl.ChannelOwner.withLogging(ChannelOwner.java:89)
+at com.microsoft.playwright.impl.LoggingSupport.withLogging(LoggingSupport.java:35)
+at com.microsoft.playwright.impl.FrameImpl.hover(FrameImpl.java:473)
+at com.microsoft.playwright.impl.LocatorImpl.hover(LocatorImpl.java:344)
+at com.microsoft.playwright.Locator.hover(Locator.java:3704)
+at page.BMSPage.MRIAbdomenBook(BMSPage.java:147)
+at test.BMSTest.VerifMRIAbdomenBook(BMSTest.java:63)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:739)
+at org.testng.TestRunner.run(TestRunner.java:614)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+Caused by: com.microsoft.playwright.impl.DriverException: Error {
+  message='Error: strict mode violation: getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("MRI Scan")) resolved to 2 elements:
+    1) <button tabindex="0" type="button" class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary css-1ujsas3">…</button> aka getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("MRI Scan").setExact(true))
+    2) <button tabindex="0" type="button" class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary css-1eyd4kp">…</button> aka getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Book an MRI Scan"))
+
+  name='Error
+  stack='Error: Error: strict mode violation: getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("MRI Scan")) resolved to 2 elements:
+    1) <button tabindex="0" type="button" class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary css-1ujsas3">…</button> aka getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("MRI Scan").setExact(true))
+    2) <button tabindex="0" type="button" class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary css-1eyd4kp">…</button> aka getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Book an MRI Scan"))
+
+    at CRExecutionContext.evaluateWithArguments (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-11370713726690388839\package\lib\server\chromium\crExecutionContext.js:92:33)
+    at async LongStandingScope._race (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-11370713726690388839\package\lib\utils\manualPromise.js:96:14)
+    at async evaluateExpression (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-11370713726690388839\package\lib\server\javascript.js:242:12)
+    at async C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-11370713726690388839\package\lib\server\frames.js:953:22
+    at async Frame.retryWithProgressAndTimeouts (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-11370713726690388839\package\lib\server\frames.js:923:24)
+    at async C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-11370713726690388839\package\lib\server\frames.js:1170:29
+    at async ProgressController.run (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-11370713726690388839\package\lib\server\progress.js:82:22)
+    at async FrameDispatcher.hover (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-11370713726690388839\package\lib\server\dispatchers\frameDispatcher.js:236:12)
+    at async LongStandingScope._race (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-11370713726690388839\package\lib\utils\manualPromise.js:96:14)
+    at async FrameDispatcher._handleCommand (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-11370713726690388839\package\lib\server\dispatchers\dispatcher.js:96:14)
+}
+Call log:
+- waiting for getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("MRI Scan"))
+
+at com.microsoft.playwright.impl.Connection.dispatch(Connection.java:259)
+at com.microsoft.playwright.impl.Connection.processOneMessage(Connection.java:211)
+at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:118)
+... 41 more
+]]>
+            </full-stacktrace>
+          </exception> <!-- com.microsoft.playwright.PlaywrightException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- VerifMRIAbdomenBook -->
+        <test-method signature="VerifMRIBrainBook()[pri:9, instance:test.BMSTest@36fc695d]" started-at="2025-12-26T17:57:16 IST" name="VerifMRIBrainBook" finished-at="2025-12-26T17:57:16 IST" duration-ms="52" status="FAIL">
+          <exception class="com.microsoft.playwright.PlaywrightException">
+            <message>
+              <![CDATA[Error {
+  message='Error: strict mode violation: getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("MRI Scan")) resolved to 2 elements:
+    1) <button tabindex="0" type="button" class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary css-1ujsas3">…</button> aka getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("MRI Scan").setExact(true))
+    2) <button tabindex="0" type="button" class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary css-1eyd4kp">…</button> aka getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Book an MRI Scan"))
+
+  name='Error
+  stack='Error: Error: strict mode violation: getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("MRI Scan")) resolved to 2 elements:
+    1) <button tabindex="0" type="button" class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary css-1ujsas3">…</button> aka getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("MRI Scan").setExact(true))
+    2) <button tabindex="0" type="button" class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary css-1eyd4kp">…</button> aka getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Book an MRI Scan"))
+
+    at CRExecutionContext.evaluateWithArguments (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-11370713726690388839\package\lib\server\chromium\crExecutionContext.js:92:33)
+    at async LongStandingScope._race (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-11370713726690388839\package\lib\utils\manualPromise.js:96:14)
+    at async evaluateExpression (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-11370713726690388839\package\lib\server\javascript.js:242:12)
+    at async C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-11370713726690388839\package\lib\server\frames.js:953:22
+    at async Frame.retryWithProgressAndTimeouts (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-11370713726690388839\package\lib\server\frames.js:923:24)
+    at async C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-11370713726690388839\package\lib\server\frames.js:1008:29
+    at async ProgressController.run (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-11370713726690388839\package\lib\server\progress.js:82:22)
+    at async FrameDispatcher.click (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-11370713726690388839\package\lib\server\dispatchers\frameDispatcher.js:157:12)
+    at async LongStandingScope._race (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-11370713726690388839\package\lib\utils\manualPromise.js:96:14)
+    at async FrameDispatcher._handleCommand (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-11370713726690388839\package\lib\server\dispatchers\dispatcher.js:96:14)
+}
+Call log:
+- waiting for getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("MRI Scan"))
+]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[com.microsoft.playwright.PlaywrightException: Error {
+  message='Error: strict mode violation: getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("MRI Scan")) resolved to 2 elements:
+    1) <button tabindex="0" type="button" class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary css-1ujsas3">…</button> aka getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("MRI Scan").setExact(true))
+    2) <button tabindex="0" type="button" class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary css-1eyd4kp">…</button> aka getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Book an MRI Scan"))
+
+  name='Error
+  stack='Error: Error: strict mode violation: getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("MRI Scan")) resolved to 2 elements:
+    1) <button tabindex="0" type="button" class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary css-1ujsas3">…</button> aka getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("MRI Scan").setExact(true))
+    2) <button tabindex="0" type="button" class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary css-1eyd4kp">…</button> aka getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Book an MRI Scan"))
+
+    at CRExecutionContext.evaluateWithArguments (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-11370713726690388839\package\lib\server\chromium\crExecutionContext.js:92:33)
+    at async LongStandingScope._race (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-11370713726690388839\package\lib\utils\manualPromise.js:96:14)
+    at async evaluateExpression (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-11370713726690388839\package\lib\server\javascript.js:242:12)
+    at async C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-11370713726690388839\package\lib\server\frames.js:953:22
+    at async Frame.retryWithProgressAndTimeouts (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-11370713726690388839\package\lib\server\frames.js:923:24)
+    at async C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-11370713726690388839\package\lib\server\frames.js:1008:29
+    at async ProgressController.run (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-11370713726690388839\package\lib\server\progress.js:82:22)
+    at async FrameDispatcher.click (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-11370713726690388839\package\lib\server\dispatchers\frameDispatcher.js:157:12)
+    at async LongStandingScope._race (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-11370713726690388839\package\lib\utils\manualPromise.js:96:14)
+    at async FrameDispatcher._handleCommand (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-11370713726690388839\package\lib\server\dispatchers\dispatcher.js:96:14)
+}
+Call log:
+- waiting for getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("MRI Scan"))
+
+at com.microsoft.playwright.impl.WaitableResult.get(WaitableResult.java:56)
+at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:120)
+at com.microsoft.playwright.impl.Connection.sendMessage(Connection.java:130)
+at com.microsoft.playwright.impl.ChannelOwner.sendMessage(ChannelOwner.java:106)
+at com.microsoft.playwright.impl.FrameImpl.clickImpl(FrameImpl.java:252)
+at com.microsoft.playwright.impl.FrameImpl.lambda$click$8(FrameImpl.java:243)
+at com.microsoft.playwright.impl.LoggingSupport.lambda$withLogging$0(LoggingSupport.java:36)
+at com.microsoft.playwright.impl.LoggingSupport.withLogging(LoggingSupport.java:47)
+at com.microsoft.playwright.impl.ChannelOwner.withLogging(ChannelOwner.java:89)
+at com.microsoft.playwright.impl.LoggingSupport.withLogging(LoggingSupport.java:35)
+at com.microsoft.playwright.impl.FrameImpl.click(FrameImpl.java:243)
+at com.microsoft.playwright.impl.LocatorImpl.click(LocatorImpl.java:160)
+at com.microsoft.playwright.Locator.click(Locator.java:2406)
+at page.BMSPage.MRIBrainBook(BMSPage.java:166)
+at test.BMSTest.VerifMRIBrainBook(BMSTest.java:68)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:739)
+at org.testng.TestRunner.run(TestRunner.java:614)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+Caused by: com.microsoft.playwright.impl.DriverException: Error {
+  message='Error: strict mode violation: getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("MRI Scan")) resolved to 2 elements:
+    1) <button tabindex="0" type="button" class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary css-1ujsas3">…</button> aka getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("MRI Scan").setExact(true))
+    2) <button tabindex="0" type="button" class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary css-1eyd4kp">…</button> aka getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Book an MRI Scan"))
+
+  name='Error
+  stack='Error: Error: strict mode violation: getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("MRI Scan")) resolved to 2 elements:
+    1) <button tabindex="0" type="button" class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary css-1ujsas3">…</button> aka getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("MRI Scan").setExact(true))
+    2) <button tabindex="0" type="button" class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary css-1eyd4kp">…</button> aka getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Book an MRI Scan"))
+
+    at CRExecutionContext.evaluateWithArguments (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-11370713726690388839\package\lib\server\chromium\crExecutionContext.js:92:33)
+    at async LongStandingScope._race (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-11370713726690388839\package\lib\utils\manualPromise.js:96:14)
+    at async evaluateExpression (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-11370713726690388839\package\lib\server\javascript.js:242:12)
+    at async C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-11370713726690388839\package\lib\server\frames.js:953:22
+    at async Frame.retryWithProgressAndTimeouts (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-11370713726690388839\package\lib\server\frames.js:923:24)
+    at async C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-11370713726690388839\package\lib\server\frames.js:1008:29
+    at async ProgressController.run (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-11370713726690388839\package\lib\server\progress.js:82:22)
+    at async FrameDispatcher.click (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-11370713726690388839\package\lib\server\dispatchers\frameDispatcher.js:157:12)
+    at async LongStandingScope._race (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-11370713726690388839\package\lib\utils\manualPromise.js:96:14)
+    at async FrameDispatcher._handleCommand (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-11370713726690388839\package\lib\server\dispatchers\dispatcher.js:96:14)
+}
+Call log:
+- waiting for getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("MRI Scan"))
+
+at com.microsoft.playwright.impl.Connection.dispatch(Connection.java:259)
+at com.microsoft.playwright.impl.Connection.processOneMessage(Connection.java:211)
+at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:118)
+... 41 more
+]]>
+            </full-stacktrace>
+          </exception> <!-- com.microsoft.playwright.PlaywrightException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- VerifMRIBrainBook -->
+        <test-method signature="VerifCTBook()[pri:12, instance:test.BMSTest@36fc695d]" started-at="2025-12-26T17:57:16 IST" name="VerifCTBook" finished-at="2025-12-26T17:57:33 IST" duration-ms="17580" status="FAIL">
+          <exception class="com.microsoft.playwright.PlaywrightException">
+            <message>
+              <![CDATA[Error {
+  message='Error: strict mode violation: getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Book a CT Scan")) resolved to 2 elements:
+    1) <button tabindex="0" type="button" class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary css-1bn5f1l">…</button> aka getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Book a CT Scan")).first()
+    2) <button tabindex="0" type="button" class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary css-fjechb">…</button> aka getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Book a CT Scan")).nth(1)
+
+  name='Error
+  stack='Error: Error: strict mode violation: getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Book a CT Scan")) resolved to 2 elements:
+    1) <button tabindex="0" type="button" class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary css-1bn5f1l">…</button> aka getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Book a CT Scan")).first()
+    2) <button tabindex="0" type="button" class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary css-fjechb">…</button> aka getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Book a CT Scan")).nth(1)
+
+    at CRExecutionContext.evaluateWithArguments (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-11370713726690388839\package\lib\server\chromium\crExecutionContext.js:92:33)
+    at async LongStandingScope._race (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-11370713726690388839\package\lib\utils\manualPromise.js:96:14)
+    at async evaluateExpression (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-11370713726690388839\package\lib\server\javascript.js:242:12)
+    at async C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-11370713726690388839\package\lib\server\frames.js:953:22
+    at async Frame.retryWithProgressAndTimeouts (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-11370713726690388839\package\lib\server\frames.js:923:24)
+    at async C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-11370713726690388839\package\lib\server\frames.js:1008:29
+    at async ProgressController.run (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-11370713726690388839\package\lib\server\progress.js:82:22)
+    at async FrameDispatcher.click (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-11370713726690388839\package\lib\server\dispatchers\frameDispatcher.js:157:12)
+    at async LongStandingScope._race (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-11370713726690388839\package\lib\utils\manualPromise.js:96:14)
+    at async FrameDispatcher._handleCommand (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-11370713726690388839\package\lib\server\dispatchers\dispatcher.js:96:14)
+}
+Call log:
+- waiting for getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Book a CT Scan"))
+]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[com.microsoft.playwright.PlaywrightException: Error {
+  message='Error: strict mode violation: getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Book a CT Scan")) resolved to 2 elements:
+    1) <button tabindex="0" type="button" class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary css-1bn5f1l">…</button> aka getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Book a CT Scan")).first()
+    2) <button tabindex="0" type="button" class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary css-fjechb">…</button> aka getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Book a CT Scan")).nth(1)
+
+  name='Error
+  stack='Error: Error: strict mode violation: getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Book a CT Scan")) resolved to 2 elements:
+    1) <button tabindex="0" type="button" class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary css-1bn5f1l">…</button> aka getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Book a CT Scan")).first()
+    2) <button tabindex="0" type="button" class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary css-fjechb">…</button> aka getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Book a CT Scan")).nth(1)
+
+    at CRExecutionContext.evaluateWithArguments (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-11370713726690388839\package\lib\server\chromium\crExecutionContext.js:92:33)
+    at async LongStandingScope._race (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-11370713726690388839\package\lib\utils\manualPromise.js:96:14)
+    at async evaluateExpression (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-11370713726690388839\package\lib\server\javascript.js:242:12)
+    at async C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-11370713726690388839\package\lib\server\frames.js:953:22
+    at async Frame.retryWithProgressAndTimeouts (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-11370713726690388839\package\lib\server\frames.js:923:24)
+    at async C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-11370713726690388839\package\lib\server\frames.js:1008:29
+    at async ProgressController.run (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-11370713726690388839\package\lib\server\progress.js:82:22)
+    at async FrameDispatcher.click (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-11370713726690388839\package\lib\server\dispatchers\frameDispatcher.js:157:12)
+    at async LongStandingScope._race (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-11370713726690388839\package\lib\utils\manualPromise.js:96:14)
+    at async FrameDispatcher._handleCommand (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-11370713726690388839\package\lib\server\dispatchers\dispatcher.js:96:14)
+}
+Call log:
+- waiting for getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Book a CT Scan"))
+
+at com.microsoft.playwright.impl.WaitableResult.get(WaitableResult.java:56)
+at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:120)
+at com.microsoft.playwright.impl.Connection.sendMessage(Connection.java:130)
+at com.microsoft.playwright.impl.ChannelOwner.sendMessage(ChannelOwner.java:106)
+at com.microsoft.playwright.impl.FrameImpl.clickImpl(FrameImpl.java:252)
+at com.microsoft.playwright.impl.FrameImpl.lambda$click$8(FrameImpl.java:243)
+at com.microsoft.playwright.impl.LoggingSupport.lambda$withLogging$0(LoggingSupport.java:36)
+at com.microsoft.playwright.impl.LoggingSupport.withLogging(LoggingSupport.java:47)
+at com.microsoft.playwright.impl.ChannelOwner.withLogging(ChannelOwner.java:89)
+at com.microsoft.playwright.impl.LoggingSupport.withLogging(LoggingSupport.java:35)
+at com.microsoft.playwright.impl.FrameImpl.click(FrameImpl.java:243)
+at com.microsoft.playwright.impl.LocatorImpl.click(LocatorImpl.java:160)
+at com.microsoft.playwright.Locator.click(Locator.java:2406)
+at page.BMSPage.CTbook(BMSPage.java:253)
+at test.BMSTest.VerifCTBook(BMSTest.java:83)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:739)
+at org.testng.TestRunner.run(TestRunner.java:614)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+Caused by: com.microsoft.playwright.impl.DriverException: Error {
+  message='Error: strict mode violation: getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Book a CT Scan")) resolved to 2 elements:
+    1) <button tabindex="0" type="button" class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary css-1bn5f1l">…</button> aka getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Book a CT Scan")).first()
+    2) <button tabindex="0" type="button" class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary css-fjechb">…</button> aka getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Book a CT Scan")).nth(1)
+
+  name='Error
+  stack='Error: Error: strict mode violation: getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Book a CT Scan")) resolved to 2 elements:
+    1) <button tabindex="0" type="button" class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary css-1bn5f1l">…</button> aka getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Book a CT Scan")).first()
+    2) <button tabindex="0" type="button" class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary css-fjechb">…</button> aka getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Book a CT Scan")).nth(1)
+
+    at CRExecutionContext.evaluateWithArguments (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-11370713726690388839\package\lib\server\chromium\crExecutionContext.js:92:33)
+    at async LongStandingScope._race (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-11370713726690388839\package\lib\utils\manualPromise.js:96:14)
+    at async evaluateExpression (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-11370713726690388839\package\lib\server\javascript.js:242:12)
+    at async C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-11370713726690388839\package\lib\server\frames.js:953:22
+    at async Frame.retryWithProgressAndTimeouts (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-11370713726690388839\package\lib\server\frames.js:923:24)
+    at async C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-11370713726690388839\package\lib\server\frames.js:1008:29
+    at async ProgressController.run (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-11370713726690388839\package\lib\server\progress.js:82:22)
+    at async FrameDispatcher.click (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-11370713726690388839\package\lib\server\dispatchers\frameDispatcher.js:157:12)
+    at async LongStandingScope._race (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-11370713726690388839\package\lib\utils\manualPromise.js:96:14)
+    at async FrameDispatcher._handleCommand (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-11370713726690388839\package\lib\server\dispatchers\dispatcher.js:96:14)
+}
+Call log:
+- waiting for getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Book a CT Scan"))
+
+at com.microsoft.playwright.impl.Connection.dispatch(Connection.java:259)
+at com.microsoft.playwright.impl.Connection.processOneMessage(Connection.java:211)
+at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:118)
+... 41 more
+]]>
+            </full-stacktrace>
+          </exception> <!-- com.microsoft.playwright.PlaywrightException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- VerifCTBook -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:test.BMSTest@36fc695d]" started-at="2025-12-26T17:57:33 IST" name="teardown" finished-at="2025-12-26T17:57:34 IST" duration-ms="534" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
