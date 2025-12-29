@@ -56,7 +56,7 @@ public class BMSTest extends BMSBase
    public void verifRemoveAddress()
    {
 	  ob.removeAddress();
-   }*/
+   }
   @Test(priority=8)
   public void VerifMRIAbdomenBook() throws Exception
   {
@@ -67,7 +67,7 @@ public class BMSTest extends BMSBase
   {
 	  ob.MRIBrainBook();
   }
-/*  @Test(priority=10)
+  @Test(priority=10)
   public void VerifCervicalMRIBook()
   {
 	  ob.CervicalSpineBook();
@@ -76,13 +76,13 @@ public class BMSTest extends BMSBase
   public void VerifKneeMRIBook()
   {
 	  ob.KneeMRIBook();
-  }*/
+  }
   @Test(priority=12)
   public void VerifCTBook() throws Exception
   {
 	  ob.CTbook();
   } 
-/*  @Test(priority=13)
+  @Test(priority=13)
   public void VerifCTAdmonBook() throws Exception
   {
 	  ob.CTAdbomenBook();
@@ -131,7 +131,7 @@ public class BMSTest extends BMSBase
   public void VerifMasterHealthchckup() throws Exception
   {
 	  ob.BookMasterHealthcheckup();
-  }
+  }*/
   @Test(priority=23)
   public void VerifXRAYBook() throws Exception
   {
@@ -142,7 +142,11 @@ public class BMSTest extends BMSBase
   {
 	  ob.bookUSG();
   }
-  @Test(priority=25)
+  public void VerifECGBook()
+  {
+	  ob.bookECG();
+  }
+/*  @Test(priority=25)
   public void verifEchobook() throws Exception
   {
 	  ob.bookECHO();

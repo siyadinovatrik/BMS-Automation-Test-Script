@@ -144,39 +144,29 @@ public class BMSPage {
 		  page.navigate("https://bmsuat.inovatrik.com/");
 		  page.waitForLoadState();
 		 Thread.sleep(2000);
-		 page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("MRI Scan")).hover();
-		 Thread.sleep(2000);
+		  page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("MRI Scan").setExact(true)).click();
 	      page.getByText("Abdomen").click();
-	      Thread.sleep(2000);
-	      page.getByPlaceholder("Enter Full Name").fill("SIYADTESTMRI");
-	      page.getByPlaceholder("Enter Phone Number").fill("9778350197");
-	      page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Book an MRI Scan")).last().click();
+	      page.getByPlaceholder("Enter Full Name").fill("SIYADMRIAbdomenTest");
+	      page.getByPlaceholder("Enter Phone Number").fill("9778350198");
+	      page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Book an MRI Scan")).first().click();
 	      page.getByRole(AriaRole.TEXTBOX, new Page.GetByRoleOptions().setName("Enter OTP")).fill("1234");
 	      page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Proceed")).click();
-	      page.getByPlaceholder("Select date").first().fill("2025-10-31");
-	      page.getByRole(AriaRole.TEXTBOX, new Page.GetByRoleOptions().setName("Select time")).click();
-	      page.getByText("11:45 AM").click();
 	      page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Submit")).click();
-	      Thread.sleep(2000);
 	      assertThat(page.locator("body")).containsText("Booking Confirmed!");
 	      page.locator("button").filter(new Locator.FilterOptions().setHasText("Back to Home")).first().click();
 	    }
 	  public void MRIBrainBook()
 	  {
-		  page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("MRI Scan")).click();
-	      page.getByText("Brain/Head").click();
-	      assertThat(page.getByRole(AriaRole.MAIN)).containsText("Premium MRIBrain/Head Scans");
-	      page.getByPlaceholder("Enter Full Name").fill("SIYADTESTMARIBRAIN");
-	      page.getByPlaceholder("Enter Phone Number").fill("9778350198");
-	      page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Book an MRI Scan")).first().click();
-	      page.getByRole(AriaRole.TEXTBOX, new Page.GetByRoleOptions().setName("Enter OTP")).fill("1234");
-	      page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Proceed")).click();
-	      page.getByPlaceholder("Select date").first().fill("2025-12-23");
-	      page.getByRole(AriaRole.TEXTBOX, new Page.GetByRoleOptions().setName("Select time")).click();
-	      page.getByText("01:00 PM").click();
-	      page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Submit")).click();
-	      assertThat(page.locator("body")).containsText("Booking Confirmed!");
-	      page.locator("button").filter(new Locator.FilterOptions().setHasText("Back to Home")).first().click();
+		     page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("MRI Scan").setExact(true)).click();
+		      page.getByText("Brain/Head").click();
+		      page.getByPlaceholder("Enter Full Name").fill("SIYADMRIBRAINTEST");
+		      page.getByPlaceholder("Enter Phone Number").fill("9778350198");
+		      page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Book an MRI Scan")).first().click();
+		      page.getByRole(AriaRole.TEXTBOX, new Page.GetByRoleOptions().setName("Enter OTP")).fill("1234");
+		      page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Proceed")).click();
+		      page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Submit")).click();
+		      assertThat(page.locator("body")).containsText("Booking Confirmed!");
+		      page.locator("button").filter(new Locator.FilterOptions().setHasText("Back to Home")).first().click();
 	  }
 	  public void CervicalSpineBook()
 	  {
@@ -247,38 +237,35 @@ public class BMSPage {
 	  {
 		  Thread.sleep(3000);
 		  page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("CT Scan")).click();
-		  page.waitForLoadState();
-	      page.getByPlaceholder("Enter Full Name").fill("SIYADCTTEST");
-	      page.getByPlaceholder("Enter Phone Number").fill("9778350197");
-	      page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Book a CT Scan")).click();
+	      page.getByText("CT Scans", new Page.GetByTextOptions().setExact(true)).click();
+	      assertThat(page.getByRole(AriaRole.MAIN)).containsText("Premium CT Scans");
+	      page.getByPlaceholder("Enter Full Name").fill("SIYADCTSCANTest");
+	      page.getByPlaceholder("Enter Phone Number").fill("9778350198");
+	      page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Book a CT Scan")).first().click();
+	      page.getByRole(AriaRole.TEXTBOX, new Page.GetByRoleOptions().setName("Enter OTP")).click();
 	      page.getByRole(AriaRole.TEXTBOX, new Page.GetByRoleOptions().setName("Enter OTP")).fill("1234");
 	      page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Proceed")).click();
-	      page.getByPlaceholder("Select date").first().fill("2025-10-31");
-	      page.getByRole(AriaRole.TEXTBOX, new Page.GetByRoleOptions().setName("Select time")).click();
-	      page.getByText("12:00 PM").click();
 	      page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Submit")).click();
-	      Thread.sleep(2000);
 	      assertThat(page.locator("body")).containsText("Booking Confirmed!");
 	      page.locator("button").filter(new Locator.FilterOptions().setHasText("Back to Home")).first().click();
 	  }
 	  public void CTAdbomenBook() throws Exception
 	  {
 		  Thread.sleep(2000);
+		  page.waitForLoadState();
 		  page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("CT Scan")).click();
-	      page.getByText("Abdomen & Pelvis", new Page.GetByTextOptions().setExact(true)).click();
-	      assertThat(page.getByRole(AriaRole.MAIN)).containsText("Premium CTAbdomen & Pelvis Scans");
-	      page.locator(".MuiStack-root > div > div > svg").first().click();
-	      page.getByPlaceholder("Enter Full Name").click();
-	      page.getByText("Instant AppointmentBook a CT").click();
-	      page.getByPlaceholder("Enter Full Name").fill("SIYADCTABDOMEN");
+	      page.getByText("Abdomen & Pelvis").click();
+	      page.getByPlaceholder("Enter Full Name").fill("CTAbdomenTest");
+	      page.getByPlaceholder("Enter Phone Number").click();
 	      page.getByPlaceholder("Enter Phone Number").fill("9778350198");
 	      page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Book a CT Scan")).first().click();
+	      page.locator(".MuiStack-root > div:nth-child(3)").first().click();
 	      page.getByRole(AriaRole.TEXTBOX, new Page.GetByRoleOptions().setName("Enter OTP")).fill("1234");
 	      page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Proceed")).click();
-	      page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Submit")).click();
 	      assertThat(page.locator("body")).containsText("Booking Confirmed!");
 	      page.locator("button").filter(new Locator.FilterOptions().setHasText("Back to Home")).first().click();
-	  }
+	    }
+	  
 	  public void CTBrainScanBook()
 	  {
 		  page.waitForLoadState();
@@ -457,105 +444,58 @@ public class BMSPage {
 		  page.navigate("https://bmsuat.inovatrik.com/");
 		  page.waitForLoadState();
 	      page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Master Health Checkup")).click();
+	      page.waitForLoadState();
 	      page.getByText("View Package").nth(1).scrollIntoViewIfNeeded();
 	      page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("View Package")).first().click();
-	      page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Proceed")).click();
 	      page.waitForLoadState();
-	      page.getByPlaceholder("Name").fill("siyaDTESTMAster");
+	      page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Proceed")).click();
+	      page.getByPlaceholder("Name").fill("SIYADMHC1");
+	      page.getByPlaceholder("Email").fill("siyadnissar2003@gmail.com");
 	      page.getByPlaceholder("Mobile Number").fill("9778350198");
 	      page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Generate OTP")).click();
-	      page.waitForLoadState();
 	      Thread.sleep(2000);
+	      page.getByPlaceholder("OTP").click();
 	      page.getByPlaceholder("OTP").fill("1234");
 	      page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Verify OTP")).click();
-	      page.waitForLoadState();
 	      page.getByPlaceholder("Age").fill("22");
 	      page.getByText("Select Gender").click();
-	      Thread.sleep(2000);
 	      page.getByRole(AriaRole.OPTION, new Page.GetByRoleOptions().setName("Male").setExact(true)).click();
-	      page.getByPlaceholder("Address").fill("ABCSDDDC");
-	      page.getByPlaceholder("Pincode").fill("685585");
-	      page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("ADD MORE MEMBERS")).click();
-	      page.waitForLoadState();
-	      page.getByPlaceholder("Name").fill("RARA");
-	      page.getByPlaceholder("Age").fill("222");
-	      page.getByText("Select Gender").click();
-	      Thread.sleep(2000);
-	      page.getByRole(AriaRole.OPTION, new Page.GetByRoleOptions().setName("Female")).click();
-	      page.getByRole(AriaRole.CHECKBOX).first().check();
-	      page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Save")).click();
-	      page.waitForLoadState();
+	      page.getByPlaceholder("Address").fill("scdcdcdcs");
+	      page.getByPlaceholder("Pincode").fill("8675774");
 	      page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Proceed")).click();
-	      Thread.sleep(2000);
-	      page.getByPlaceholder("Select date").fill("2025-11-27");
-	      page.locator("body > div.MuiModal-root.css-8ndowl > div.MuiStack-root.css-j7qwjs > div > div > div.MuiStack-root.css-1lw5nbc > div.MuiStack-root.css-un51iw > div.MuiStack-root.css-hiw9ve > div.MuiStack-root.css-v0zhh > div > div:nth-child(2) > div > p").click();
-	      page.waitForLoadState();
 	      page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Review booking")).click();
-	      Thread.sleep(2000);
-	      page.getByLabel("Pay Now").check();
-	      page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Confirm Booking")).click();
-	      Thread.sleep(2000);
-	      page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Proceed To Pay")).click();
-	      page.waitForLoadState();
-	      page.locator("li").filter(new Locator.FilterOptions().setHasText("Net Banking")).click();
-	      page.locator("div").filter(new Locator.FilterOptions().setHasText(Pattern.compile("^Test bank$"))).first().click();
-	      page.locator("#net-banking-list-TESTPGNB-pop").getByTestId("netbanking-proceed-btn-TESTPGNB").click();
-	      page.getByPlaceholder("Enter payu as username").click();
-	      page.getByPlaceholder("Enter payu as username").fill("payu");
-	      page.locator("#CredForm div").filter(new Locator.FilterOptions().setHasText("Password Kindly enter valid")).locator("div").click();
-	      page.getByPlaceholder("Enter payu as password").fill("payu");
-	      page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Submit")).click();
-	      page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Simulate Success Response")).click();
-	      assertThat(page.getByRole(AriaRole.PARAGRAPH)).containsText("Your payment was successful!");
-	      page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Go to Home")).click();
+	      assertThat(page.locator("body")).containsText("Master Health Checkup - Silver");
+	      page.getByLabel("Pay Later, Enquire Now").check();
+	      page.locator(".MuiStack-root > div:nth-child(2) > .MuiButtonBase-root").first().click();
+	    
 	  }
 	  public void XRAYBook() throws Exception
 	  {
+		  page.navigate("https://bmsuat.inovatrik.com/");
 		   page.waitForLoadState();
-		      page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("My Account")).click();
-		      page.waitForLoadState();
-              page.locator("//*[@id=\"root\"]/div[2]/div[2]/div[1]/div/div[2]/div[3]/div/div[2]/div/button").click();
-		      page.waitForLoadState();
-		      Thread.sleep(2000); 
-		      page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Login/ Sign Up")).click();
-		      page.getByPlaceholder("Enter Mobile Number").click();
-		      page.getByPlaceholder("Enter Mobile Number").fill("9778350198");
-		      page.waitForLoadState();
-		      Thread.sleep(3000);
-		      page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Send OTP")).click();
-		      Thread.sleep(2000);
-		      page.getByRole(AriaRole.TEXTBOX).first().fill("1");
-		      page.getByRole(AriaRole.TEXTBOX).nth(1).fill("2");
-		      page.getByRole(AriaRole.TEXTBOX).nth(2).fill("3");
-		      page.getByRole(AriaRole.TEXTBOX).nth(3).fill("4");
-		      Thread.sleep(2000);
-		      page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Login")).click();
-		      page.waitForLoadState();
-	      page.getByText("BOOK MY SCANS").nth(1).click();
 	      page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Scans")).hover();
           Thread.sleep(2000);
 	      page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("X-Ray")).first().click();
 	      page.getByLabel("Aarthi Scans & Labs").first().scrollIntoViewIfNeeded();
           page.locator("#root > main > div.MuiStack-root.t3-main-container.css-1xbe40y > div.MuiStack-root.css-aiww9g > div.MuiStack-root.css-pdv2i8 > div > div > div > div.MuiStack-root.css-cy91f0 > div.MuiStack-root.css-17bqjow > div.MuiStack-root.css-c98prh > div > div:nth-child(1) > div > div > div.MuiGrid-root.MuiGrid-item.MuiGrid-grid-lg-12.css-ucashc > div.MuiStack-root.css-ooasvr > div > button > p > p").first().click();
 	      page.waitForLoadState();
-	      page.getByPlaceholder("Select time slot").click();
-	      Thread.sleep(2000);
-	      page.locator("body > div.MuiBox-root.css-1dvep9k > div.MuiBox-root.css-19p0syp > div:nth-child(2)").click();
+	      page.getByRole(AriaRole.TEXTBOX, new Page.GetByRoleOptions().setName("Enter Full Name")).fill("SIYADTEST");
+	      page.getByRole(AriaRole.TEXTBOX, new Page.GetByRoleOptions().setName("Enter Phone Number")).fill("9778350198");
+	      page.getByPlaceholder("Select time slot").last().click();
 	      page.waitForLoadState();
+	      Locator slot = page.locator("body > div.MuiBox-root.css-1dvep9k > div.MuiBox-root.css-19p0syp");
+	      slot.first().click();
+
 	      page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Get OTP")).click();
-	      Thread.sleep(2000);
 	      page.getByRole(AriaRole.SPINBUTTON).first().fill("1");
 	      page.getByRole(AriaRole.SPINBUTTON).nth(1).fill("2");
 	      page.getByRole(AriaRole.SPINBUTTON).nth(2).fill("3");
 	      page.getByRole(AriaRole.SPINBUTTON).nth(3).fill("4");
-	      page.waitForLoadState();
 	      page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Verify OTP")).click();
-	      Thread.sleep(2000);
 	      page.getByRole(AriaRole.IMG, new Page.GetByRoleOptions().setName("IMAGES.APP_BAR.CART_LOGO")).click();
-	      Thread.sleep(2000);
-	      assertThat(page.locator("body > div:nth-child(13) > div.MuiStack-root.css-j7qwjs > div > div > div > div.MuiStack-root.css-1deewkp > div.MuiStack-root.css-14chpeu > div > div.MuiStack-root.css-1yhhhfm > div.MuiStack-root.css-ba97s9 > div > div > div.MuiStack-root.css-em1apr > p.MuiTypography-root.MuiTypography-body1.body.css-1sjy5zq")).containsText("Aarthi");
-	      page.getByRole(AriaRole.BUTTON).first().click();
-      }
+	      assertThat(page.locator("body")).containsText("XRAY");
+	      page.locator("div:nth-child(13) > div:nth-child(3) > div > div > div > div > div:nth-child(3) > .MuiButtonBase-root").click();
+	    }
 	  public void bookUSG() throws Exception
 	  {
 		  page.navigate("https://bmsuat.inovatrik.com/");
@@ -565,27 +505,34 @@ public class BMSPage {
 		  page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Ultrasound-(USG)")).click();
 		  page.waitForLoadState();
 	      page.getByLabel("Focus Diagnostics").first().scrollIntoViewIfNeeded();
-         page.locator("#root > main > div.MuiStack-root.t3-main-container.css-1xbe40y > div.MuiStack-root.css-aiww9g > div.MuiStack-root.css-pdv2i8 > div > div > div > div.MuiStack-root.css-cy91f0 > div.MuiStack-root.css-17bqjow > div.MuiStack-root.css-c98prh > div > div:nth-child(1) > div > div > div.MuiGrid-root.MuiGrid-item.MuiGrid-grid-lg-12.css-ucashc > div.MuiStack-root.css-ooasvr > div > button").click();
-	     Thread.sleep(2000);
-         page.locator("body > div:nth-child(13) > div.MuiStack-root.css-j7qwjs > div > div > div.MuiStack-root.css-19kgzin > div.MuiStack-root.css-lejrp4 > div.MuiStack-root.css-162sumq > div.MuiStack-root.css-ritwar > div.MuiStack-root.css-1php0l0 > div > input").fill("2025-12-03");
-         page.getByPlaceholder("Select time slot").click();
-         Thread.sleep(2000);
-	      page.getByText("9:00 AM").click();
-	      page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Get OTP")).click();
-	      Thread.sleep(2000);
-	      page.getByRole(AriaRole.SPINBUTTON).first().fill("1");
-	      page.getByRole(AriaRole.SPINBUTTON).nth(1).fill("2");
-	      page.getByRole(AriaRole.SPINBUTTON).nth(2).fill("3");
-	      page.getByRole(AriaRole.SPINBUTTON).nth(3).fill("4");
-	      Thread.sleep(2000);
-	      page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Verify OTP")).click();
+          page.locator("#root > main > div.MuiStack-root.t3-main-container.css-1xbe40y > div.MuiStack-root.css-aiww9g > div.MuiStack-root.css-pdv2i8 > div > div > div > div.MuiStack-root.css-cy91f0 > div.MuiStack-root.css-17bqjow > div.MuiStack-root.css-c98prh > div > div:nth-child(1) > div > div > div.MuiGrid-root.MuiGrid-item.MuiGrid-grid-lg-12.css-ucashc > div.MuiStack-root.css-ooasvr > div > button").click();
+          page.waitForLoadState();
+          page.getByPlaceholder("Select date").fill("2025-12-30");
+         
+        Locator slot2=page.locator("body > div.MuiBox-root.css-16mjwcv > div.MuiBox-root.css-19p0syp");
+        slot2.first().click();
+        
+         page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Add to Cart")).click();
+         page.getByRole(AriaRole.IMG, new Page.GetByRoleOptions().setName("IMAGES.APP_BAR.CART_LOGO")).click();
+         assertThat(page.locator("body")).containsText("USG");
 	      page.waitForLoadState();
-	      page.getByRole(AriaRole.IMG, new Page.GetByRoleOptions().setName("IMAGES.APP_BAR.CART_LOGO")).click();
-	      assertThat(page.locator("body")).containsText("DIGITAL ECG");
 	  }
 	  public void bookECG()
 	  {
-		  
+		  page.waitForLoadState();
+		  page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Scans")).hover();
+		  page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("ECG")).first().click();
+		  page.getByLabel("Focus Diagnostics").first().scrollIntoViewIfNeeded();
+          page.locator("#root > main > div.MuiStack-root.t3-main-container.css-1xbe40y > div.MuiStack-root.css-aiww9g > div.MuiStack-root.css-pdv2i8 > div > div > div > div.MuiStack-root.css-cy91f0 > div.MuiStack-root.css-17bqjow > div.MuiStack-root.css-c98prh > div > div:nth-child(1) > div > div > div.MuiGrid-root.MuiGrid-item.MuiGrid-grid-lg-12.css-ucashc > div.MuiStack-root.css-ooasvr > div > button").click();
+	      page.getByPlaceholder("Select date").fill("2025-12-30");
+	      page.waitForLoadState();
+	      Locator slot3=page.locator("body > div.MuiBox-root.css-16mjwcv > div.MuiBox-root.css-19p0syp");
+	        slot3.first().click();
+	        
+	      page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Add to Cart")).click();
+	      page.getByRole(AriaRole.IMG, new Page.GetByRoleOptions().setName("IMAGES.APP_BAR.CART_LOGO")).click();
+	      assertThat(page.locator("body")).containsText("DIGITAL ECG");
+	      page.locator("div:nth-child(13) > div:nth-child(3) > div > div > div > div > div > .MuiButtonBase-root").first().click();
 	  }
 	  public void bookECHO() throws Exception
 	  {
