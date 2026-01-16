@@ -1,0 +1,13 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite name="BMS Test Suite">
+    <listeners>
+        <listener class-name="listeners.ExtentReporterNG"/>
+    </listeners>
+
+    <test name="BMS Functional Tests">
+        <classes>
+            <class name="test.BMSTest"/>
+        </classes>
+    </test>
+</suite>

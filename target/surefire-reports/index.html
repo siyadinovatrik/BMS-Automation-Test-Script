@@ -1,0 +1,1768 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+  <meta charset='utf-8'>
+  <title>TestNG reports</title>
+
+    <link type="text/css" href="testng-reports1.css" rel="stylesheet" id="ultra" />
+    <link type="text/css" href="testng-reports.css" rel="stylesheet" id="retro" disabled="false"/>
+    <script type="text/javascript" src="jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="testng-reports.js"></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type='text/javascript'>
+      google.load('visualization', '1', {packages:['table']});
+      google.setOnLoadCallback(drawTable);
+      var suiteTableInitFunctions = new Array();
+      var suiteTableData = new Array();
+    </script>
+    <!--
+      <script type="text/javascript" src="jquery-ui/js/jquery-ui-1.8.16.custom.min.js"></script>
+     -->
+  </head>
+
+  <body>    <div class="top-banner-root">
+      <span class="top-banner-title-font">Test results</span>
+      <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
+      <br/>
+      <span class="top-banner-font-1">1 suite, 24 failed tests</span>
+    </div> <!-- top-banner-root -->
+    <div class="navigator-root">
+      <div class="navigator-suite-header">
+        <span>All suites</span>
+        <a href="#" title="Collapse/expand all the suites" class="collapse-all-link">
+          <img src="collapseall.gif" class="collapse-all-icon">
+          </img> <!-- collapse-all-icon -->
+        </a> <!-- collapse-all-link -->
+      </div> <!-- navigator-suite-header -->
+      <div class="suite">
+        <div class="rounded-window">
+          <div class="suite-header light-rounded-window-top">
+            <a href="#" panel-name="suite-BMS_Test_Suite" class="navigator-link">
+              <span class="suite-name border-failed">BMS Test Suite</span>
+            </a> <!-- navigator-link -->
+          </div> <!-- suite-header light-rounded-window-top -->
+          <div class="navigator-suite-content">
+            <div class="suite-section-title">
+              <span>Info</span>
+            </div> <!-- suite-section-title -->
+            <div class="suite-section-content">
+              <ul>
+                <li>
+                  <a href="#" panel-name="test-xml-BMS_Test_Suite" class="navigator-link ">
+                    <span>C:\Users\Haippyfit\eclipse-workspace\BMS\testng.xml</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="testlist-BMS_Test_Suite" class="navigator-link ">
+                    <span class="test-stats">1 test</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="group-BMS_Test_Suite" class="navigator-link ">
+                    <span>0 groups</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="times-BMS_Test_Suite" class="navigator-link ">
+                    <span>Times</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="reporter-BMS_Test_Suite" class="navigator-link ">
+                    <span>Reporter output</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="ignored-methods-BMS_Test_Suite" class="navigator-link ">
+                    <span>Ignored methods</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="chronological-BMS_Test_Suite" class="navigator-link ">
+                    <span>Chronological view</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+              </ul>
+            </div> <!-- suite-section-content -->
+            <div class="result-section">
+              <div class="suite-section-title">
+                <span>Results</span>
+              </div> <!-- suite-section-title -->
+              <div class="suite-section-content">
+                <ul>
+                  <li>
+                    <span class="method-stats">28 methods, 24 failed,   4 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-BMS_Test_Suite" class="hide-methods failed suite-BMS_Test_Suite"> (hide)</a> <!-- hide-methods failed suite-BMS_Test_Suite -->
+                      <a href="#" panel-name="suite-BMS_Test_Suite" class="show-methods failed suite-BMS_Test_Suite"> (show)</a> <!-- show-methods failed suite-BMS_Test_Suite -->
+                    </span>
+                    <div class="method-list-content failed suite-BMS_Test_Suite">
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-BMS_Test_Suite" title="test.BMSTest" class="method navigator-link" hash-for-method="testScreenshotCapture">testScreenshotCapture</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-BMS_Test_Suite" title="test.BMSTest" class="method navigator-link" hash-for-method="verifyAddAddress">verifyAddAddress</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-BMS_Test_Suite" title="test.BMSTest" class="method navigator-link" hash-for-method="verifyCTAbdomenBook">verifyCTAbdomenBook</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-BMS_Test_Suite" title="test.BMSTest" class="method navigator-link" hash-for-method="verifyCTBook">verifyCTBook</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-BMS_Test_Suite" title="test.BMSTest" class="method navigator-link" hash-for-method="verifyCTBrainBook">verifyCTBrainBook</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-BMS_Test_Suite" title="test.BMSTest" class="method navigator-link" hash-for-method="verifyCTChestBook">verifyCTChestBook</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-BMS_Test_Suite" title="test.BMSTest" class="method navigator-link" hash-for-method="verifyCTPNSScanBook">verifyCTPNSScanBook</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-BMS_Test_Suite" title="test.BMSTest" class="method navigator-link" hash-for-method="verifyCervicalMRIBook">verifyCervicalMRIBook</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-BMS_Test_Suite" title="test.BMSTest" class="method navigator-link" hash-for-method="verifyECGBook">verifyECGBook</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-BMS_Test_Suite" title="test.BMSTest" class="method navigator-link" hash-for-method="verifyEditMobileLogin">verifyEditMobileLogin</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-BMS_Test_Suite" title="test.BMSTest" class="method navigator-link" hash-for-method="verifyEditProfile">verifyEditProfile</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-BMS_Test_Suite" title="test.BMSTest" class="method navigator-link" hash-for-method="verifyGoldMHCBook">verifyGoldMHCBook</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-BMS_Test_Suite" title="test.BMSTest" class="method navigator-link" hash-for-method="verifyInvalidOTP">verifyInvalidOTP</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-BMS_Test_Suite" title="test.BMSTest" class="method navigator-link" hash-for-method="verifyKneeMRIBook">verifyKneeMRIBook</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-BMS_Test_Suite" title="test.BMSTest" class="method navigator-link" hash-for-method="verifyLogin">verifyLogin</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-BMS_Test_Suite" title="test.BMSTest" class="method navigator-link" hash-for-method="verifyMRIAbdomenBook">verifyMRIAbdomenBook</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-BMS_Test_Suite" title="test.BMSTest" class="method navigator-link" hash-for-method="verifyMRIBrainBook">verifyMRIBrainBook</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-BMS_Test_Suite" title="test.BMSTest" class="method navigator-link" hash-for-method="verifyMasterHealthCheckup">verifyMasterHealthCheckup</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-BMS_Test_Suite" title="test.BMSTest" class="method navigator-link" hash-for-method="verifyNeckBook">verifyNeckBook</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-BMS_Test_Suite" title="test.BMSTest" class="method navigator-link" hash-for-method="verifyPETCTBook">verifyPETCTBook</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-BMS_Test_Suite" title="test.BMSTest" class="method navigator-link" hash-for-method="verifyRemoveAddress">verifyRemoveAddress</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-BMS_Test_Suite" title="test.BMSTest" class="method navigator-link" hash-for-method="verifyResendOTP">verifyResendOTP</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-BMS_Test_Suite" title="test.BMSTest" class="method navigator-link" hash-for-method="verifyUSGBook">verifyUSGBook</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-BMS_Test_Suite" title="test.BMSTest" class="method navigator-link" hash-for-method="verifyXRAYBook">verifyXRAYBook</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-BMS_Test_Suite -->
+                  </li>
+                  <li>
+                    <span class="method-list-title passed">Passed methods</span>
+                    <span class="show-or-hide-methods passed">
+                      <a href="#" panel-name="suite-BMS_Test_Suite" class="hide-methods passed suite-BMS_Test_Suite"> (hide)</a> <!-- hide-methods passed suite-BMS_Test_Suite -->
+                      <a href="#" panel-name="suite-BMS_Test_Suite" class="show-methods passed suite-BMS_Test_Suite"> (show)</a> <!-- show-methods passed suite-BMS_Test_Suite -->
+                    </span>
+                    <div class="method-list-content passed suite-BMS_Test_Suite">
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-BMS_Test_Suite" title="test.BMSTest" class="method navigator-link" hash-for-method="verifyBrokenLinksTest">verifyBrokenLinksTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-BMS_Test_Suite" title="test.BMSTest" class="method navigator-link" hash-for-method="verifyCheckNavigationFlow">verifyCheckNavigationFlow</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-BMS_Test_Suite" title="test.BMSTest" class="method navigator-link" hash-for-method="verifyTitleTest">verifyTitleTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-BMS_Test_Suite" title="test.BMSTest" class="method navigator-link" hash-for-method="verifyUrlTest">verifyUrlTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content passed suite-BMS_Test_Suite -->
+                  </li>
+                </ul>
+              </div> <!-- suite-section-content -->
+            </div> <!-- result-section -->
+          </div> <!-- navigator-suite-content -->
+        </div> <!-- rounded-window -->
+      </div> <!-- suite -->
+    </div> <!-- navigator-root -->
+    <div class="wrapper">
+      <div class="main-panel-root">
+        <div panel-name="suite-BMS_Test_Suite" class="panel BMS_Test_Suite">
+          <div class="suite-BMS_Test_Suite-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">test.BMSTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="testScreenshotCapture">
+                  </a> <!-- testScreenshotCapture -->
+                  <span class="method-name">testScreenshotCapture</span>
+                  <div class="stack-trace">java.lang.AssertionError: Intentional failure to test screenshot capture
+	at test.BMSTest.testScreenshotCapture(BMSTest.java:160)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 31 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyAddAddress">
+                  </a> <!-- verifyAddAddress -->
+                  <span class="method-name">verifyAddAddress</span>
+                  <div class="stack-trace">com.microsoft.playwright.impl.TargetClosedError: Error {
+  message=&apos;Target page, context or browser has been closed
+  name=&apos;TargetClosedError
+  stack=&apos;TargetClosedError: Target page, context or browser has been closed
+    at DispatcherConnection.dispatch (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-2087115189577318224\package\lib\server\dispatchers\dispatcher.js:273:44)
+    at transport.onmessage (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-2087115189577318224\package\lib\cli\driver.js:52:57)
+    at Immediate._onImmediate (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-2087115189577318224\package\lib\protocol\transport.js:77:34)
+    at process.processImmediate (node:internal/timers:483:21)
+}
+	at com.microsoft.playwright.impl.WaitableResult.get(WaitableResult.java:54)
+	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:120)
+	at com.microsoft.playwright.impl.Connection.sendMessage(Connection.java:130)
+	at com.microsoft.playwright.impl.ChannelOwner.sendMessage(ChannelOwner.java:106)
+	at com.microsoft.playwright.impl.FrameImpl.clickImpl(FrameImpl.java:252)
+	at com.microsoft.playwright.impl.FrameImpl.lambda$click$8(FrameImpl.java:243)
+	at com.microsoft.playwright.impl.LoggingSupport.lambda$withLogging$0(LoggingSupport.java:36)
+	at com.microsoft.playwright.impl.LoggingSupport.withLogging(LoggingSupport.java:47)
+	at com.microsoft.playwright.impl.ChannelOwner.withLogging(ChannelOwner.java:89)
+	at com.microsoft.playwright.impl.LoggingSupport.withLogging(LoggingSupport.java:35)
+	at com.microsoft.playwright.impl.FrameImpl.click(FrameImpl.java:243)
+	at com.microsoft.playwright.impl.LocatorImpl.click(LocatorImpl.java:160)
+	at com.microsoft.playwright.Locator.click(Locator.java:2406)
+	at page.BMSPage.addAddress(BMSPage.java:117)
+	at test.BMSTest.verifyAddAddress(BMSTest.java:52)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+Caused by: com.microsoft.playwright.impl.TargetClosedError: Error {
+  message=&apos;Target page, context or browser has been closed
+  name=&apos;TargetClosedError
+  stack=&apos;TargetClosedError: Target page, context or browser has been closed
+    at DispatcherConnection.dispatch (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-2087115189577318224\package\lib\server\dispatchers\dispatcher.js:273:44)
+    at transport.onmessage (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-2087115189577318224\package\lib\cli\driver.js:52:57)
+    at Immediate._onImmediate (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-2087115189577318224\package\lib\protocol\transport.js:77:34)
+    at process.processImmediate (node:internal/timers:483:21)
+}
+	at com.microsoft.playwright.impl.Connection.dispatch(Connection.java:256)
+	at com.microsoft.playwright.impl.Connection.processOneMessage(Connection.java:211)
+	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:118)
+	... 45 more
+... Removed 31 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyCTAbdomenBook">
+                  </a> <!-- verifyCTAbdomenBook -->
+                  <span class="method-name">verifyCTAbdomenBook</span>
+                  <div class="stack-trace">com.microsoft.playwright.impl.TargetClosedError: Error {
+  message=&apos;Target page, context or browser has been closed
+  name=&apos;TargetClosedError
+  stack=&apos;TargetClosedError: Target page, context or browser has been closed
+    at DispatcherConnection.dispatch (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-2087115189577318224\package\lib\server\dispatchers\dispatcher.js:273:44)
+    at transport.onmessage (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-2087115189577318224\package\lib\cli\driver.js:52:57)
+    at Immediate._onImmediate (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-2087115189577318224\package\lib\protocol\transport.js:77:34)
+    at process.processImmediate (node:internal/timers:483:21)
+}
+	at com.microsoft.playwright.impl.WaitableResult.get(WaitableResult.java:54)
+	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:120)
+	at com.microsoft.playwright.impl.Connection.sendMessage(Connection.java:130)
+	at com.microsoft.playwright.impl.ChannelOwner.sendMessage(ChannelOwner.java:106)
+	at com.microsoft.playwright.impl.FrameImpl.clickImpl(FrameImpl.java:252)
+	at com.microsoft.playwright.impl.FrameImpl.lambda$click$8(FrameImpl.java:243)
+	at com.microsoft.playwright.impl.LoggingSupport.lambda$withLogging$0(LoggingSupport.java:36)
+	at com.microsoft.playwright.impl.LoggingSupport.withLogging(LoggingSupport.java:47)
+	at com.microsoft.playwright.impl.ChannelOwner.withLogging(ChannelOwner.java:89)
+	at com.microsoft.playwright.impl.LoggingSupport.withLogging(LoggingSupport.java:35)
+	at com.microsoft.playwright.impl.FrameImpl.click(FrameImpl.java:243)
+	at com.microsoft.playwright.impl.LocatorImpl.click(LocatorImpl.java:160)
+	at com.microsoft.playwright.Locator.click(Locator.java:2406)
+	at page.BMSPage.CTAdbomenBook(BMSPage.java:248)
+	at test.BMSTest.verifyCTAbdomenBook(BMSTest.java:87)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+Caused by: com.microsoft.playwright.impl.TargetClosedError: Error {
+  message=&apos;Target page, context or browser has been closed
+  name=&apos;TargetClosedError
+  stack=&apos;TargetClosedError: Target page, context or browser has been closed
+    at DispatcherConnection.dispatch (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-2087115189577318224\package\lib\server\dispatchers\dispatcher.js:273:44)
+    at transport.onmessage (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-2087115189577318224\package\lib\cli\driver.js:52:57)
+    at Immediate._onImmediate (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-2087115189577318224\package\lib\protocol\transport.js:77:34)
+    at process.processImmediate (node:internal/timers:483:21)
+}
+	at com.microsoft.playwright.impl.Connection.dispatch(Connection.java:256)
+	at com.microsoft.playwright.impl.Connection.processOneMessage(Connection.java:211)
+	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:118)
+	... 45 more
+... Removed 31 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyCTBook">
+                  </a> <!-- verifyCTBook -->
+                  <span class="method-name">verifyCTBook</span>
+                  <div class="stack-trace">com.microsoft.playwright.impl.TargetClosedError: Error {
+  message=&apos;Target page, context or browser has been closed
+  name=&apos;TargetClosedError
+  stack=&apos;TargetClosedError: Target page, context or browser has been closed
+    at DispatcherConnection.dispatch (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-2087115189577318224\package\lib\server\dispatchers\dispatcher.js:273:44)
+    at transport.onmessage (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-2087115189577318224\package\lib\cli\driver.js:52:57)
+    at Immediate._onImmediate (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-2087115189577318224\package\lib\protocol\transport.js:77:34)
+    at process.processImmediate (node:internal/timers:483:21)
+}
+	at com.microsoft.playwright.impl.WaitableResult.get(WaitableResult.java:54)
+	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:120)
+	at com.microsoft.playwright.impl.Connection.sendMessage(Connection.java:130)
+	at com.microsoft.playwright.impl.ChannelOwner.sendMessage(ChannelOwner.java:106)
+	at com.microsoft.playwright.impl.FrameImpl.clickImpl(FrameImpl.java:252)
+	at com.microsoft.playwright.impl.FrameImpl.lambda$click$8(FrameImpl.java:243)
+	at com.microsoft.playwright.impl.LoggingSupport.lambda$withLogging$0(LoggingSupport.java:36)
+	at com.microsoft.playwright.impl.LoggingSupport.withLogging(LoggingSupport.java:47)
+	at com.microsoft.playwright.impl.ChannelOwner.withLogging(ChannelOwner.java:89)
+	at com.microsoft.playwright.impl.LoggingSupport.withLogging(LoggingSupport.java:35)
+	at com.microsoft.playwright.impl.FrameImpl.click(FrameImpl.java:243)
+	at com.microsoft.playwright.impl.LocatorImpl.click(LocatorImpl.java:160)
+	at com.microsoft.playwright.Locator.click(Locator.java:2406)
+	at page.BMSPage.CTbook(BMSPage.java:232)
+	at test.BMSTest.verifyCTBook(BMSTest.java:82)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+Caused by: com.microsoft.playwright.impl.TargetClosedError: Error {
+  message=&apos;Target page, context or browser has been closed
+  name=&apos;TargetClosedError
+  stack=&apos;TargetClosedError: Target page, context or browser has been closed
+    at DispatcherConnection.dispatch (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-2087115189577318224\package\lib\server\dispatchers\dispatcher.js:273:44)
+    at transport.onmessage (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-2087115189577318224\package\lib\cli\driver.js:52:57)
+    at Immediate._onImmediate (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-2087115189577318224\package\lib\protocol\transport.js:77:34)
+    at process.processImmediate (node:internal/timers:483:21)
+}
+	at com.microsoft.playwright.impl.Connection.dispatch(Connection.java:256)
+	at com.microsoft.playwright.impl.Connection.processOneMessage(Connection.java:211)
+	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:118)
+	... 45 more
+... Removed 31 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyCTBrainBook">
+                  </a> <!-- verifyCTBrainBook -->
+                  <span class="method-name">verifyCTBrainBook</span>
+                  <div class="stack-trace">com.microsoft.playwright.impl.TargetClosedError: Error {
+  message=&apos;Target page, context or browser has been closed
+  name=&apos;TargetClosedError
+  stack=&apos;TargetClosedError: Target page, context or browser has been closed
+    at DispatcherConnection.dispatch (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-2087115189577318224\package\lib\server\dispatchers\dispatcher.js:273:44)
+    at transport.onmessage (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-2087115189577318224\package\lib\cli\driver.js:52:57)
+    at Immediate._onImmediate (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-2087115189577318224\package\lib\protocol\transport.js:77:34)
+    at process.processImmediate (node:internal/timers:483:21)
+}
+	at com.microsoft.playwright.impl.WaitableResult.get(WaitableResult.java:54)
+	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:120)
+	at com.microsoft.playwright.impl.Connection.sendMessage(Connection.java:130)
+	at com.microsoft.playwright.impl.ChannelOwner.sendMessage(ChannelOwner.java:106)
+	at com.microsoft.playwright.impl.FrameImpl.clickImpl(FrameImpl.java:252)
+	at com.microsoft.playwright.impl.FrameImpl.lambda$click$8(FrameImpl.java:243)
+	at com.microsoft.playwright.impl.LoggingSupport.lambda$withLogging$0(LoggingSupport.java:36)
+	at com.microsoft.playwright.impl.LoggingSupport.withLogging(LoggingSupport.java:47)
+	at com.microsoft.playwright.impl.ChannelOwner.withLogging(ChannelOwner.java:89)
+	at com.microsoft.playwright.impl.LoggingSupport.withLogging(LoggingSupport.java:35)
+	at com.microsoft.playwright.impl.FrameImpl.click(FrameImpl.java:243)
+	at com.microsoft.playwright.impl.LocatorImpl.click(LocatorImpl.java:160)
+	at com.microsoft.playwright.Locator.click(Locator.java:2406)
+	at page.BMSPage.CTBrainScanBook(BMSPage.java:267)
+	at test.BMSTest.verifyCTBrainBook(BMSTest.java:92)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+Caused by: com.microsoft.playwright.impl.TargetClosedError: Error {
+  message=&apos;Target page, context or browser has been closed
+  name=&apos;TargetClosedError
+  stack=&apos;TargetClosedError: Target page, context or browser has been closed
+    at DispatcherConnection.dispatch (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-2087115189577318224\package\lib\server\dispatchers\dispatcher.js:273:44)
+    at transport.onmessage (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-2087115189577318224\package\lib\cli\driver.js:52:57)
+    at Immediate._onImmediate (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-2087115189577318224\package\lib\protocol\transport.js:77:34)
+    at process.processImmediate (node:internal/timers:483:21)
+}
+	at com.microsoft.playwright.impl.Connection.dispatch(Connection.java:256)
+	at com.microsoft.playwright.impl.Connection.processOneMessage(Connection.java:211)
+	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:118)
+	... 45 more
+... Removed 31 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyCTChestBook">
+                  </a> <!-- verifyCTChestBook -->
+                  <span class="method-name">verifyCTChestBook</span>
+                  <div class="stack-trace">com.microsoft.playwright.impl.TargetClosedError: Error {
+  message=&apos;Target page, context or browser has been closed
+  name=&apos;TargetClosedError
+  stack=&apos;TargetClosedError: Target page, context or browser has been closed
+    at DispatcherConnection.dispatch (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-2087115189577318224\package\lib\server\dispatchers\dispatcher.js:273:44)
+    at transport.onmessage (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-2087115189577318224\package\lib\cli\driver.js:52:57)
+    at Immediate._onImmediate (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-2087115189577318224\package\lib\protocol\transport.js:77:34)
+    at process.processImmediate (node:internal/timers:483:21)
+}
+	at com.microsoft.playwright.impl.WaitableResult.get(WaitableResult.java:54)
+	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:120)
+	at com.microsoft.playwright.impl.Connection.sendMessage(Connection.java:130)
+	at com.microsoft.playwright.impl.ChannelOwner.sendMessage(ChannelOwner.java:106)
+	at com.microsoft.playwright.impl.FrameImpl.clickImpl(FrameImpl.java:252)
+	at com.microsoft.playwright.impl.FrameImpl.lambda$click$8(FrameImpl.java:243)
+	at com.microsoft.playwright.impl.LoggingSupport.lambda$withLogging$0(LoggingSupport.java:36)
+	at com.microsoft.playwright.impl.LoggingSupport.withLogging(LoggingSupport.java:47)
+	at com.microsoft.playwright.impl.ChannelOwner.withLogging(ChannelOwner.java:89)
+	at com.microsoft.playwright.impl.LoggingSupport.withLogging(LoggingSupport.java:35)
+	at com.microsoft.playwright.impl.FrameImpl.click(FrameImpl.java:243)
+	at com.microsoft.playwright.impl.LocatorImpl.click(LocatorImpl.java:160)
+	at com.microsoft.playwright.Locator.click(Locator.java:2406)
+	at page.BMSPage.CTChestScanBook(BMSPage.java:283)
+	at test.BMSTest.verifyCTChestBook(BMSTest.java:97)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+Caused by: com.microsoft.playwright.impl.TargetClosedError: Error {
+  message=&apos;Target page, context or browser has been closed
+  name=&apos;TargetClosedError
+  stack=&apos;TargetClosedError: Target page, context or browser has been closed
+    at DispatcherConnection.dispatch (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-2087115189577318224\package\lib\server\dispatchers\dispatcher.js:273:44)
+    at transport.onmessage (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-2087115189577318224\package\lib\cli\driver.js:52:57)
+    at Immediate._onImmediate (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-2087115189577318224\package\lib\protocol\transport.js:77:34)
+    at process.processImmediate (node:internal/timers:483:21)
+}
+	at com.microsoft.playwright.impl.Connection.dispatch(Connection.java:256)
+	at com.microsoft.playwright.impl.Connection.processOneMessage(Connection.java:211)
+	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:118)
+	... 45 more
+... Removed 31 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyCTPNSScanBook">
+                  </a> <!-- verifyCTPNSScanBook -->
+                  <span class="method-name">verifyCTPNSScanBook</span>
+                  <div class="stack-trace">com.microsoft.playwright.impl.TargetClosedError: Error {
+  message=&apos;Target page, context or browser has been closed
+  name=&apos;TargetClosedError
+  stack=&apos;TargetClosedError: Target page, context or browser has been closed
+    at DispatcherConnection.dispatch (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-2087115189577318224\package\lib\server\dispatchers\dispatcher.js:273:44)
+    at transport.onmessage (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-2087115189577318224\package\lib\cli\driver.js:52:57)
+    at Immediate._onImmediate (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-2087115189577318224\package\lib\protocol\transport.js:77:34)
+    at process.processImmediate (node:internal/timers:483:21)
+}
+	at com.microsoft.playwright.impl.WaitableResult.get(WaitableResult.java:54)
+	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:120)
+	at com.microsoft.playwright.impl.Connection.sendMessage(Connection.java:130)
+	at com.microsoft.playwright.impl.ChannelOwner.sendMessage(ChannelOwner.java:106)
+	at com.microsoft.playwright.impl.FrameImpl.clickImpl(FrameImpl.java:252)
+	at com.microsoft.playwright.impl.FrameImpl.lambda$click$8(FrameImpl.java:243)
+	at com.microsoft.playwright.impl.LoggingSupport.lambda$withLogging$0(LoggingSupport.java:36)
+	at com.microsoft.playwright.impl.LoggingSupport.withLogging(LoggingSupport.java:47)
+	at com.microsoft.playwright.impl.ChannelOwner.withLogging(ChannelOwner.java:89)
+	at com.microsoft.playwright.impl.LoggingSupport.withLogging(LoggingSupport.java:35)
+	at com.microsoft.playwright.impl.FrameImpl.click(FrameImpl.java:243)
+	at com.microsoft.playwright.impl.LocatorImpl.click(LocatorImpl.java:160)
+	at com.microsoft.playwright.Locator.click(Locator.java:2406)
+	at page.BMSPage.CTPNSSCanBook(BMSPage.java:315)
+	at test.BMSTest.verifyCTPNSScanBook(BMSTest.java:107)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+Caused by: com.microsoft.playwright.impl.TargetClosedError: Error {
+  message=&apos;Target page, context or browser has been closed
+  name=&apos;TargetClosedError
+  stack=&apos;TargetClosedError: Target page, context or browser has been closed
+    at DispatcherConnection.dispatch (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-2087115189577318224\package\lib\server\dispatchers\dispatcher.js:273:44)
+    at transport.onmessage (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-2087115189577318224\package\lib\cli\driver.js:52:57)
+    at Immediate._onImmediate (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-2087115189577318224\package\lib\protocol\transport.js:77:34)
+    at process.processImmediate (node:internal/timers:483:21)
+}
+	at com.microsoft.playwright.impl.Connection.dispatch(Connection.java:256)
+	at com.microsoft.playwright.impl.Connection.processOneMessage(Connection.java:211)
+	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:118)
+	... 45 more
+... Removed 31 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyCervicalMRIBook">
+                  </a> <!-- verifyCervicalMRIBook -->
+                  <span class="method-name">verifyCervicalMRIBook</span>
+                  <div class="stack-trace">com.microsoft.playwright.impl.TargetClosedError: Error {
+  message=&apos;Target page, context or browser has been closed
+  name=&apos;TargetClosedError
+  stack=&apos;TargetClosedError: Target page, context or browser has been closed
+    at DispatcherConnection.dispatch (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-2087115189577318224\package\lib\server\dispatchers\dispatcher.js:273:44)
+    at transport.onmessage (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-2087115189577318224\package\lib\cli\driver.js:52:57)
+    at Immediate._onImmediate (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-2087115189577318224\package\lib\protocol\transport.js:77:34)
+    at process.processImmediate (node:internal/timers:483:21)
+}
+	at com.microsoft.playwright.impl.WaitableResult.get(WaitableResult.java:54)
+	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:120)
+	at com.microsoft.playwright.impl.Connection.sendMessage(Connection.java:130)
+	at com.microsoft.playwright.impl.ChannelOwner.sendMessage(ChannelOwner.java:106)
+	at com.microsoft.playwright.impl.FrameImpl.clickImpl(FrameImpl.java:252)
+	at com.microsoft.playwright.impl.FrameImpl.lambda$click$8(FrameImpl.java:243)
+	at com.microsoft.playwright.impl.LoggingSupport.lambda$withLogging$0(LoggingSupport.java:36)
+	at com.microsoft.playwright.impl.LoggingSupport.withLogging(LoggingSupport.java:47)
+	at com.microsoft.playwright.impl.ChannelOwner.withLogging(ChannelOwner.java:89)
+	at com.microsoft.playwright.impl.LoggingSupport.withLogging(LoggingSupport.java:35)
+	at com.microsoft.playwright.impl.FrameImpl.click(FrameImpl.java:243)
+	at com.microsoft.playwright.impl.LocatorImpl.click(LocatorImpl.java:160)
+	at com.microsoft.playwright.Locator.click(Locator.java:2406)
+	at page.BMSPage.CervicalSpineBook(BMSPage.java:168)
+	at test.BMSTest.verifyCervicalMRIBook(BMSTest.java:72)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+Caused by: com.microsoft.playwright.impl.TargetClosedError: Error {
+  message=&apos;Target page, context or browser has been closed
+  name=&apos;TargetClosedError
+  stack=&apos;TargetClosedError: Target page, context or browser has been closed
+    at DispatcherConnection.dispatch (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-2087115189577318224\package\lib\server\dispatchers\dispatcher.js:273:44)
+    at transport.onmessage (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-2087115189577318224\package\lib\cli\driver.js:52:57)
+    at Immediate._onImmediate (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-2087115189577318224\package\lib\protocol\transport.js:77:34)
+    at process.processImmediate (node:internal/timers:483:21)
+}
+	at com.microsoft.playwright.impl.Connection.dispatch(Connection.java:256)
+	at com.microsoft.playwright.impl.Connection.processOneMessage(Connection.java:211)
+	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:118)
+	... 45 more
+... Removed 31 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyECGBook">
+                  </a> <!-- verifyECGBook -->
+                  <span class="method-name">verifyECGBook</span>
+                  <div class="stack-trace">com.microsoft.playwright.impl.TargetClosedError: Error {
+  message=&apos;Target page, context or browser has been closed
+  name=&apos;TargetClosedError
+  stack=&apos;TargetClosedError: Target page, context or browser has been closed
+    at DispatcherConnection.dispatch (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-2087115189577318224\package\lib\server\dispatchers\dispatcher.js:273:44)
+    at transport.onmessage (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-2087115189577318224\package\lib\cli\driver.js:52:57)
+    at Immediate._onImmediate (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-2087115189577318224\package\lib\protocol\transport.js:77:34)
+    at process.processImmediate (node:internal/timers:483:21)
+}
+	at com.microsoft.playwright.impl.WaitableResult.get(WaitableResult.java:54)
+	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:120)
+	at com.microsoft.playwright.impl.Connection.sendMessage(Connection.java:130)
+	at com.microsoft.playwright.impl.ChannelOwner.sendMessage(ChannelOwner.java:106)
+	at com.microsoft.playwright.impl.FrameImpl.clickImpl(FrameImpl.java:252)
+	at com.microsoft.playwright.impl.FrameImpl.lambda$click$8(FrameImpl.java:243)
+	at com.microsoft.playwright.impl.LoggingSupport.lambda$withLogging$0(LoggingSupport.java:36)
+	at com.microsoft.playwright.impl.LoggingSupport.withLogging(LoggingSupport.java:47)
+	at com.microsoft.playwright.impl.ChannelOwner.withLogging(ChannelOwner.java:89)
+	at com.microsoft.playwright.impl.LoggingSupport.withLogging(LoggingSupport.java:35)
+	at com.microsoft.playwright.impl.FrameImpl.click(FrameImpl.java:243)
+	at com.microsoft.playwright.impl.LocatorImpl.click(LocatorImpl.java:160)
+	at com.microsoft.playwright.Locator.click(Locator.java:2406)
+	at page.BMSPage.bookECG(BMSPage.java:541)
+	at test.BMSTest.verifyECGBook(BMSTest.java:155)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+Caused by: com.microsoft.playwright.impl.TargetClosedError: Error {
+  message=&apos;Target page, context or browser has been closed
+  name=&apos;TargetClosedError
+  stack=&apos;TargetClosedError: Target page, context or browser has been closed
+    at DispatcherConnection.dispatch (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-2087115189577318224\package\lib\server\dispatchers\dispatcher.js:273:44)
+    at transport.onmessage (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-2087115189577318224\package\lib\cli\driver.js:52:57)
+    at Immediate._onImmediate (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-2087115189577318224\package\lib\protocol\transport.js:77:34)
+    at process.processImmediate (node:internal/timers:483:21)
+}
+	at com.microsoft.playwright.impl.Connection.dispatch(Connection.java:256)
+	at com.microsoft.playwright.impl.Connection.processOneMessage(Connection.java:211)
+	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:118)
+	... 45 more
+... Removed 31 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyEditMobileLogin">
+                  </a> <!-- verifyEditMobileLogin -->
+                  <span class="method-name">verifyEditMobileLogin</span>
+                  <div class="stack-trace">com.microsoft.playwright.impl.TargetClosedError: Error {
+  message=&apos;Target page, context or browser has been closed
+  name=&apos;TargetClosedError
+  stack=&apos;TargetClosedError: Target page, context or browser has been closed
+    at DispatcherConnection.dispatch (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-2087115189577318224\package\lib\server\dispatchers\dispatcher.js:273:44)
+    at transport.onmessage (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-2087115189577318224\package\lib\cli\driver.js:52:57)
+    at Immediate._onImmediate (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-2087115189577318224\package\lib\protocol\transport.js:77:34)
+    at process.processImmediate (node:internal/timers:483:21)
+}
+	at com.microsoft.playwright.impl.WaitableResult.get(WaitableResult.java:54)
+	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:120)
+	at com.microsoft.playwright.impl.Connection.sendMessage(Connection.java:130)
+	at com.microsoft.playwright.impl.ChannelOwner.sendMessage(ChannelOwner.java:106)
+	at com.microsoft.playwright.impl.FrameImpl.navigateImpl(FrameImpl.java:463)
+	at com.microsoft.playwright.impl.PageImpl.lambda$navigate$46(PageImpl.java:932)
+	at com.microsoft.playwright.impl.LoggingSupport.withLogging(LoggingSupport.java:47)
+	at com.microsoft.playwright.impl.ChannelOwner.withLogging(ChannelOwner.java:89)
+	at com.microsoft.playwright.impl.PageImpl.navigate(PageImpl.java:932)
+	at com.microsoft.playwright.impl.PageImpl.navigate(PageImpl.java:42)
+	at com.microsoft.playwright.Page.navigate(Page.java:5446)
+	at page.BMSPage.EditMobileLogin(BMSPage.java:350)
+	at test.BMSTest.verifyEditMobileLogin(BMSTest.java:117)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+Caused by: com.microsoft.playwright.impl.TargetClosedError: Error {
+  message=&apos;Target page, context or browser has been closed
+  name=&apos;TargetClosedError
+  stack=&apos;TargetClosedError: Target page, context or browser has been closed
+    at DispatcherConnection.dispatch (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-2087115189577318224\package\lib\server\dispatchers\dispatcher.js:273:44)
+    at transport.onmessage (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-2087115189577318224\package\lib\cli\driver.js:52:57)
+    at Immediate._onImmediate (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-2087115189577318224\package\lib\protocol\transport.js:77:34)
+    at process.processImmediate (node:internal/timers:483:21)
+}
+	at com.microsoft.playwright.impl.Connection.dispatch(Connection.java:256)
+	at com.microsoft.playwright.impl.Connection.processOneMessage(Connection.java:211)
+	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:118)
+	... 43 more
+... Removed 31 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyEditProfile">
+                  </a> <!-- verifyEditProfile -->
+                  <span class="method-name">verifyEditProfile</span>
+                  <div class="stack-trace">com.microsoft.playwright.impl.TargetClosedError: Error {
+  message=&apos;Target page, context or browser has been closed
+  name=&apos;TargetClosedError
+  stack=&apos;TargetClosedError: Target page, context or browser has been closed
+    at DispatcherConnection.dispatch (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-2087115189577318224\package\lib\server\dispatchers\dispatcher.js:273:44)
+    at transport.onmessage (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-2087115189577318224\package\lib\cli\driver.js:52:57)
+    at Immediate._onImmediate (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-2087115189577318224\package\lib\protocol\transport.js:77:34)
+    at process.processImmediate (node:internal/timers:483:21)
+}
+	at com.microsoft.playwright.impl.WaitableResult.get(WaitableResult.java:54)
+	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:120)
+	at com.microsoft.playwright.impl.Connection.sendMessage(Connection.java:130)
+	at com.microsoft.playwright.impl.ChannelOwner.sendMessage(ChannelOwner.java:106)
+	at com.microsoft.playwright.impl.FrameImpl.clickImpl(FrameImpl.java:252)
+	at com.microsoft.playwright.impl.FrameImpl.lambda$click$8(FrameImpl.java:243)
+	at com.microsoft.playwright.impl.LoggingSupport.lambda$withLogging$0(LoggingSupport.java:36)
+	at com.microsoft.playwright.impl.LoggingSupport.withLogging(LoggingSupport.java:47)
+	at com.microsoft.playwright.impl.ChannelOwner.withLogging(ChannelOwner.java:89)
+	at com.microsoft.playwright.impl.LoggingSupport.withLogging(LoggingSupport.java:35)
+	at com.microsoft.playwright.impl.FrameImpl.click(FrameImpl.java:243)
+	at com.microsoft.playwright.impl.LocatorImpl.click(LocatorImpl.java:160)
+	at com.microsoft.playwright.Locator.click(Locator.java:2406)
+	at page.BMSPage.editProfile(BMSPage.java:107)
+	at test.BMSTest.verifyEditProfile(BMSTest.java:47)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+Caused by: com.microsoft.playwright.impl.TargetClosedError: Error {
+  message=&apos;Target page, context or browser has been closed
+  name=&apos;TargetClosedError
+  stack=&apos;TargetClosedError: Target page, context or browser has been closed
+    at DispatcherConnection.dispatch (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-2087115189577318224\package\lib\server\dispatchers\dispatcher.js:273:44)
+    at transport.onmessage (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-2087115189577318224\package\lib\cli\driver.js:52:57)
+    at Immediate._onImmediate (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-2087115189577318224\package\lib\protocol\transport.js:77:34)
+    at process.processImmediate (node:internal/timers:483:21)
+}
+	at com.microsoft.playwright.impl.Connection.dispatch(Connection.java:256)
+	at com.microsoft.playwright.impl.Connection.processOneMessage(Connection.java:211)
+	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:118)
+	... 45 more
+... Removed 31 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyGoldMHCBook">
+                  </a> <!-- verifyGoldMHCBook -->
+                  <span class="method-name">verifyGoldMHCBook</span>
+                  <div class="stack-trace">com.microsoft.playwright.impl.TargetClosedError: Error {
+  message=&apos;Target page, context or browser has been closed
+  name=&apos;TargetClosedError
+  stack=&apos;TargetClosedError: Target page, context or browser has been closed
+    at DispatcherConnection.dispatch (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-2087115189577318224\package\lib\server\dispatchers\dispatcher.js:273:44)
+    at transport.onmessage (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-2087115189577318224\package\lib\cli\driver.js:52:57)
+    at Immediate._onImmediate (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-2087115189577318224\package\lib\protocol\transport.js:77:34)
+    at process.processImmediate (node:internal/timers:483:21)
+}
+	at com.microsoft.playwright.impl.WaitableResult.get(WaitableResult.java:54)
+	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:120)
+	at com.microsoft.playwright.impl.Connection.sendMessage(Connection.java:130)
+	at com.microsoft.playwright.impl.ChannelOwner.sendMessage(ChannelOwner.java:106)
+	at com.microsoft.playwright.impl.FrameImpl.waitForSelectorImpl(FrameImpl.java:1060)
+	at com.microsoft.playwright.impl.FrameImpl.waitForSelectorImpl(FrameImpl.java:1050)
+	at com.microsoft.playwright.impl.FrameImpl.lambda$waitForSelector$46(FrameImpl.java:1046)
+	at com.microsoft.playwright.impl.LoggingSupport.withLogging(LoggingSupport.java:47)
+	at com.microsoft.playwright.impl.ChannelOwner.withLogging(ChannelOwner.java:89)
+	at com.microsoft.playwright.impl.FrameImpl.waitForSelector(FrameImpl.java:1046)
+	at com.microsoft.playwright.impl.LocatorImpl.elementHandle(LocatorImpl.java:202)
+	at com.microsoft.playwright.impl.LocatorImpl.withElement(LocatorImpl.java:84)
+	at com.microsoft.playwright.impl.LocatorImpl.scrollIntoViewIfNeeded(LocatorImpl.java:476)
+	at com.microsoft.playwright.Locator.scrollIntoViewIfNeeded(Locator.java:4312)
+	at page.BMSPage.BookGoldMHCBook(BMSPage.java:457)
+	at test.BMSTest.verifyGoldMHCBook(BMSTest.java:140)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+Caused by: com.microsoft.playwright.impl.TargetClosedError: Error {
+  message=&apos;Target page, context or browser has been closed
+  name=&apos;TargetClosedError
+  stack=&apos;TargetClosedError: Target page, context or browser has been closed
+    at DispatcherConnection.dispatch (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-2087115189577318224\package\lib\server\dispatchers\dispatcher.js:273:44)
+    at transport.onmessage (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-2087115189577318224\package\lib\cli\driver.js:52:57)
+    at Immediate._onImmediate (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-2087115189577318224\package\lib\protocol\transport.js:77:34)
+    at process.processImmediate (node:internal/timers:483:21)
+}
+	at com.microsoft.playwright.impl.Connection.dispatch(Connection.java:256)
+	at com.microsoft.playwright.impl.Connection.processOneMessage(Connection.java:211)
+	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:118)
+	... 46 more
+... Removed 31 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyInvalidOTP">
+                  </a> <!-- verifyInvalidOTP -->
+                  <span class="method-name">verifyInvalidOTP</span>
+                  <div class="stack-trace">com.microsoft.playwright.impl.TargetClosedError: Error {
+  message=&apos;Target page, context or browser has been closed
+  name=&apos;TargetClosedError
+  stack=&apos;TargetClosedError: Target page, context or browser has been closed
+    at DispatcherConnection.dispatch (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-2087115189577318224\package\lib\server\dispatchers\dispatcher.js:273:44)
+    at transport.onmessage (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-2087115189577318224\package\lib\cli\driver.js:52:57)
+    at Immediate._onImmediate (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-2087115189577318224\package\lib\protocol\transport.js:77:34)
+    at process.processImmediate (node:internal/timers:483:21)
+}
+	at com.microsoft.playwright.impl.WaitableResult.get(WaitableResult.java:54)
+	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:120)
+	at com.microsoft.playwright.impl.Connection.sendMessage(Connection.java:130)
+	at com.microsoft.playwright.impl.ChannelOwner.sendMessage(ChannelOwner.java:106)
+	at com.microsoft.playwright.impl.FrameImpl.navigateImpl(FrameImpl.java:463)
+	at com.microsoft.playwright.impl.PageImpl.lambda$navigate$46(PageImpl.java:932)
+	at com.microsoft.playwright.impl.LoggingSupport.withLogging(LoggingSupport.java:47)
+	at com.microsoft.playwright.impl.ChannelOwner.withLogging(ChannelOwner.java:89)
+	at com.microsoft.playwright.impl.PageImpl.navigate(PageImpl.java:932)
+	at com.microsoft.playwright.impl.PageImpl.navigate(PageImpl.java:42)
+	at com.microsoft.playwright.Page.navigate(Page.java:5446)
+	at page.BMSPage.InvalidOTP(BMSPage.java:371)
+	at test.BMSTest.verifyInvalidOTP(BMSTest.java:127)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+Caused by: com.microsoft.playwright.impl.TargetClosedError: Error {
+  message=&apos;Target page, context or browser has been closed
+  name=&apos;TargetClosedError
+  stack=&apos;TargetClosedError: Target page, context or browser has been closed
+    at DispatcherConnection.dispatch (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-2087115189577318224\package\lib\server\dispatchers\dispatcher.js:273:44)
+    at transport.onmessage (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-2087115189577318224\package\lib\cli\driver.js:52:57)
+    at Immediate._onImmediate (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-2087115189577318224\package\lib\protocol\transport.js:77:34)
+    at process.processImmediate (node:internal/timers:483:21)
+}
+	at com.microsoft.playwright.impl.Connection.dispatch(Connection.java:256)
+	at com.microsoft.playwright.impl.Connection.processOneMessage(Connection.java:211)
+	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:118)
+	... 43 more
+... Removed 31 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyKneeMRIBook">
+                  </a> <!-- verifyKneeMRIBook -->
+                  <span class="method-name">verifyKneeMRIBook</span>
+                  <div class="stack-trace">com.microsoft.playwright.impl.TargetClosedError: Error {
+  message=&apos;Target page, context or browser has been closed
+  name=&apos;TargetClosedError
+  stack=&apos;TargetClosedError: Target page, context or browser has been closed
+    at DispatcherConnection.dispatch (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-2087115189577318224\package\lib\server\dispatchers\dispatcher.js:273:44)
+    at transport.onmessage (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-2087115189577318224\package\lib\cli\driver.js:52:57)
+    at Immediate._onImmediate (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-2087115189577318224\package\lib\protocol\transport.js:77:34)
+    at process.processImmediate (node:internal/timers:483:21)
+}
+	at com.microsoft.playwright.impl.WaitableResult.get(WaitableResult.java:54)
+	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:120)
+	at com.microsoft.playwright.impl.Connection.sendMessage(Connection.java:130)
+	at com.microsoft.playwright.impl.ChannelOwner.sendMessage(ChannelOwner.java:106)
+	at com.microsoft.playwright.impl.FrameImpl.clickImpl(FrameImpl.java:252)
+	at com.microsoft.playwright.impl.FrameImpl.lambda$click$8(FrameImpl.java:243)
+	at com.microsoft.playwright.impl.LoggingSupport.lambda$withLogging$0(LoggingSupport.java:36)
+	at com.microsoft.playwright.impl.LoggingSupport.withLogging(LoggingSupport.java:47)
+	at com.microsoft.playwright.impl.ChannelOwner.withLogging(ChannelOwner.java:89)
+	at com.microsoft.playwright.impl.LoggingSupport.withLogging(LoggingSupport.java:35)
+	at com.microsoft.playwright.impl.FrameImpl.click(FrameImpl.java:243)
+	at com.microsoft.playwright.impl.LocatorImpl.click(LocatorImpl.java:160)
+	at com.microsoft.playwright.Locator.click(Locator.java:2406)
+	at page.BMSPage.KneeMRIBook(BMSPage.java:184)
+	at test.BMSTest.verifyKneeMRIBook(BMSTest.java:77)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+Caused by: com.microsoft.playwright.impl.TargetClosedError: Error {
+  message=&apos;Target page, context or browser has been closed
+  name=&apos;TargetClosedError
+  stack=&apos;TargetClosedError: Target page, context or browser has been closed
+    at DispatcherConnection.dispatch (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-2087115189577318224\package\lib\server\dispatchers\dispatcher.js:273:44)
+    at transport.onmessage (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-2087115189577318224\package\lib\cli\driver.js:52:57)
+    at Immediate._onImmediate (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-2087115189577318224\package\lib\protocol\transport.js:77:34)
+    at process.processImmediate (node:internal/timers:483:21)
+}
+	at com.microsoft.playwright.impl.Connection.dispatch(Connection.java:256)
+	at com.microsoft.playwright.impl.Connection.processOneMessage(Connection.java:211)
+	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:118)
+	... 45 more
+... Removed 31 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyLogin">
+                  </a> <!-- verifyLogin -->
+                  <span class="method-name">verifyLogin</span>
+                  <div class="stack-trace">com.microsoft.playwright.impl.TargetClosedError: Error {
+  message=&apos;Target page, context or browser has been closed
+  name=&apos;TargetClosedError
+  stack=&apos;TargetClosedError: Target page, context or browser has been closed
+    at DispatcherConnection.dispatch (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-2087115189577318224\package\lib\server\dispatchers\dispatcher.js:375:15)
+}
+Call log:
+- waiting for getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName(&quot;Login/ Sign Up&quot;))
+-   locator resolved to &lt;button tabindex=&quot;0&quot; type=&quot;button&quot; class=&quot;MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary css-1m5z9h3&quot;&gt;…&lt;/button&gt;
+- attempting click action
+-   waiting for element to be visible, enabled and stable
+
+	at com.microsoft.playwright.impl.WaitableResult.get(WaitableResult.java:54)
+	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:120)
+	at com.microsoft.playwright.impl.Connection.sendMessage(Connection.java:130)
+	at com.microsoft.playwright.impl.ChannelOwner.sendMessage(ChannelOwner.java:106)
+	at com.microsoft.playwright.impl.FrameImpl.clickImpl(FrameImpl.java:252)
+	at com.microsoft.playwright.impl.FrameImpl.lambda$click$8(FrameImpl.java:243)
+	at com.microsoft.playwright.impl.LoggingSupport.lambda$withLogging$0(LoggingSupport.java:36)
+	at com.microsoft.playwright.impl.LoggingSupport.withLogging(LoggingSupport.java:47)
+	at com.microsoft.playwright.impl.ChannelOwner.withLogging(ChannelOwner.java:89)
+	at com.microsoft.playwright.impl.LoggingSupport.withLogging(LoggingSupport.java:35)
+	at com.microsoft.playwright.impl.FrameImpl.click(FrameImpl.java:243)
+	at com.microsoft.playwright.impl.LocatorImpl.click(LocatorImpl.java:160)
+	at com.microsoft.playwright.Locator.click(Locator.java:2406)
+	at page.BMSPage.login(BMSPage.java:91)
+	at test.BMSTest.verifyLogin(BMSTest.java:42)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+Caused by: com.microsoft.playwright.impl.TargetClosedError: Error {
+  message=&apos;Target page, context or browser has been closed
+  name=&apos;TargetClosedError
+  stack=&apos;TargetClosedError: Target page, context or browser has been closed
+    at DispatcherConnection.dispatch (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-2087115189577318224\package\lib\server\dispatchers\dispatcher.js:375:15)
+}
+Call log:
+- waiting for getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName(&quot;Login/ Sign Up&quot;))
+-   locator resolved to &lt;button tabindex=&quot;0&quot; type=&quot;button&quot; class=&quot;MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary css-1m5z9h3&quot;&gt;…&lt;/button&gt;
+- attempting click action
+-   waiting for element to be visible, enabled and stable
+
+	at com.microsoft.playwright.impl.Connection.dispatch(Connection.java:256)
+	at com.microsoft.playwright.impl.Connection.processOneMessage(Connection.java:211)
+	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:118)
+	... 45 more
+... Removed 31 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyMRIAbdomenBook">
+                  </a> <!-- verifyMRIAbdomenBook -->
+                  <span class="method-name">verifyMRIAbdomenBook</span>
+                  <div class="stack-trace">com.microsoft.playwright.impl.TargetClosedError: Error {
+  message=&apos;Target page, context or browser has been closed
+  name=&apos;TargetClosedError
+  stack=&apos;TargetClosedError: Target page, context or browser has been closed
+    at DispatcherConnection.dispatch (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-2087115189577318224\package\lib\server\dispatchers\dispatcher.js:273:44)
+    at transport.onmessage (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-2087115189577318224\package\lib\cli\driver.js:52:57)
+    at Immediate._onImmediate (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-2087115189577318224\package\lib\protocol\transport.js:77:34)
+    at process.processImmediate (node:internal/timers:483:21)
+}
+	at com.microsoft.playwright.impl.WaitableResult.get(WaitableResult.java:54)
+	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:120)
+	at com.microsoft.playwright.impl.Connection.sendMessage(Connection.java:130)
+	at com.microsoft.playwright.impl.ChannelOwner.sendMessage(ChannelOwner.java:106)
+	at com.microsoft.playwright.impl.FrameImpl.navigateImpl(FrameImpl.java:463)
+	at com.microsoft.playwright.impl.PageImpl.lambda$navigate$46(PageImpl.java:932)
+	at com.microsoft.playwright.impl.LoggingSupport.withLogging(LoggingSupport.java:47)
+	at com.microsoft.playwright.impl.ChannelOwner.withLogging(ChannelOwner.java:89)
+	at com.microsoft.playwright.impl.PageImpl.navigate(PageImpl.java:932)
+	at com.microsoft.playwright.impl.PageImpl.navigate(PageImpl.java:42)
+	at com.microsoft.playwright.Page.navigate(Page.java:5446)
+	at page.BMSPage.MRIAbdomenBook(BMSPage.java:139)
+	at test.BMSTest.verifyMRIAbdomenBook(BMSTest.java:62)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+Caused by: com.microsoft.playwright.impl.TargetClosedError: Error {
+  message=&apos;Target page, context or browser has been closed
+  name=&apos;TargetClosedError
+  stack=&apos;TargetClosedError: Target page, context or browser has been closed
+    at DispatcherConnection.dispatch (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-2087115189577318224\package\lib\server\dispatchers\dispatcher.js:273:44)
+    at transport.onmessage (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-2087115189577318224\package\lib\cli\driver.js:52:57)
+    at Immediate._onImmediate (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-2087115189577318224\package\lib\protocol\transport.js:77:34)
+    at process.processImmediate (node:internal/timers:483:21)
+}
+	at com.microsoft.playwright.impl.Connection.dispatch(Connection.java:256)
+	at com.microsoft.playwright.impl.Connection.processOneMessage(Connection.java:211)
+	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:118)
+	... 43 more
+... Removed 31 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyMRIBrainBook">
+                  </a> <!-- verifyMRIBrainBook -->
+                  <span class="method-name">verifyMRIBrainBook</span>
+                  <div class="stack-trace">com.microsoft.playwright.impl.TargetClosedError: Error {
+  message=&apos;Target page, context or browser has been closed
+  name=&apos;TargetClosedError
+  stack=&apos;TargetClosedError: Target page, context or browser has been closed
+    at DispatcherConnection.dispatch (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-2087115189577318224\package\lib\server\dispatchers\dispatcher.js:273:44)
+    at transport.onmessage (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-2087115189577318224\package\lib\cli\driver.js:52:57)
+    at Immediate._onImmediate (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-2087115189577318224\package\lib\protocol\transport.js:77:34)
+    at process.processImmediate (node:internal/timers:483:21)
+}
+	at com.microsoft.playwright.impl.WaitableResult.get(WaitableResult.java:54)
+	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:120)
+	at com.microsoft.playwright.impl.Connection.sendMessage(Connection.java:130)
+	at com.microsoft.playwright.impl.ChannelOwner.sendMessage(ChannelOwner.java:106)
+	at com.microsoft.playwright.impl.FrameImpl.clickImpl(FrameImpl.java:252)
+	at com.microsoft.playwright.impl.FrameImpl.lambda$click$8(FrameImpl.java:243)
+	at com.microsoft.playwright.impl.LoggingSupport.lambda$withLogging$0(LoggingSupport.java:36)
+	at com.microsoft.playwright.impl.LoggingSupport.withLogging(LoggingSupport.java:47)
+	at com.microsoft.playwright.impl.ChannelOwner.withLogging(ChannelOwner.java:89)
+	at com.microsoft.playwright.impl.LoggingSupport.withLogging(LoggingSupport.java:35)
+	at com.microsoft.playwright.impl.FrameImpl.click(FrameImpl.java:243)
+	at com.microsoft.playwright.impl.LocatorImpl.click(LocatorImpl.java:160)
+	at com.microsoft.playwright.Locator.click(Locator.java:2406)
+	at page.BMSPage.MRIBrainBook(BMSPage.java:154)
+	at test.BMSTest.verifyMRIBrainBook(BMSTest.java:67)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+Caused by: com.microsoft.playwright.impl.TargetClosedError: Error {
+  message=&apos;Target page, context or browser has been closed
+  name=&apos;TargetClosedError
+  stack=&apos;TargetClosedError: Target page, context or browser has been closed
+    at DispatcherConnection.dispatch (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-2087115189577318224\package\lib\server\dispatchers\dispatcher.js:273:44)
+    at transport.onmessage (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-2087115189577318224\package\lib\cli\driver.js:52:57)
+    at Immediate._onImmediate (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-2087115189577318224\package\lib\protocol\transport.js:77:34)
+    at process.processImmediate (node:internal/timers:483:21)
+}
+	at com.microsoft.playwright.impl.Connection.dispatch(Connection.java:256)
+	at com.microsoft.playwright.impl.Connection.processOneMessage(Connection.java:211)
+	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:118)
+	... 45 more
+... Removed 31 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyMasterHealthCheckup">
+                  </a> <!-- verifyMasterHealthCheckup -->
+                  <span class="method-name">verifyMasterHealthCheckup</span>
+                  <div class="stack-trace">com.microsoft.playwright.impl.TargetClosedError: Error {
+  message=&apos;Target page, context or browser has been closed
+  name=&apos;TargetClosedError
+  stack=&apos;TargetClosedError: Target page, context or browser has been closed
+    at DispatcherConnection.dispatch (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-2087115189577318224\package\lib\server\dispatchers\dispatcher.js:273:44)
+    at transport.onmessage (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-2087115189577318224\package\lib\cli\driver.js:52:57)
+    at Immediate._onImmediate (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-2087115189577318224\package\lib\protocol\transport.js:77:34)
+    at process.processImmediate (node:internal/timers:483:21)
+}
+	at com.microsoft.playwright.impl.WaitableResult.get(WaitableResult.java:54)
+	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:120)
+	at com.microsoft.playwright.impl.Connection.sendMessage(Connection.java:130)
+	at com.microsoft.playwright.impl.ChannelOwner.sendMessage(ChannelOwner.java:106)
+	at com.microsoft.playwright.impl.FrameImpl.navigateImpl(FrameImpl.java:463)
+	at com.microsoft.playwright.impl.PageImpl.lambda$navigate$46(PageImpl.java:932)
+	at com.microsoft.playwright.impl.LoggingSupport.withLogging(LoggingSupport.java:47)
+	at com.microsoft.playwright.impl.ChannelOwner.withLogging(ChannelOwner.java:89)
+	at com.microsoft.playwright.impl.PageImpl.navigate(PageImpl.java:932)
+	at com.microsoft.playwright.impl.PageImpl.navigate(PageImpl.java:42)
+	at com.microsoft.playwright.Page.navigate(Page.java:5446)
+	at page.BMSPage.BookSlverMasterHealthcheckup(BMSPage.java:423)
+	at test.BMSTest.verifyMasterHealthCheckup(BMSTest.java:135)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+Caused by: com.microsoft.playwright.impl.TargetClosedError: Error {
+  message=&apos;Target page, context or browser has been closed
+  name=&apos;TargetClosedError
+  stack=&apos;TargetClosedError: Target page, context or browser has been closed
+    at DispatcherConnection.dispatch (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-2087115189577318224\package\lib\server\dispatchers\dispatcher.js:273:44)
+    at transport.onmessage (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-2087115189577318224\package\lib\cli\driver.js:52:57)
+    at Immediate._onImmediate (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-2087115189577318224\package\lib\protocol\transport.js:77:34)
+    at process.processImmediate (node:internal/timers:483:21)
+}
+	at com.microsoft.playwright.impl.Connection.dispatch(Connection.java:256)
+	at com.microsoft.playwright.impl.Connection.processOneMessage(Connection.java:211)
+	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:118)
+	... 43 more
+... Removed 31 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyNeckBook">
+                  </a> <!-- verifyNeckBook -->
+                  <span class="method-name">verifyNeckBook</span>
+                  <div class="stack-trace">com.microsoft.playwright.impl.TargetClosedError: Error {
+  message=&apos;Target page, context or browser has been closed
+  name=&apos;TargetClosedError
+  stack=&apos;TargetClosedError: Target page, context or browser has been closed
+    at DispatcherConnection.dispatch (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-2087115189577318224\package\lib\server\dispatchers\dispatcher.js:273:44)
+    at transport.onmessage (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-2087115189577318224\package\lib\cli\driver.js:52:57)
+    at Immediate._onImmediate (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-2087115189577318224\package\lib\protocol\transport.js:77:34)
+    at process.processImmediate (node:internal/timers:483:21)
+}
+	at com.microsoft.playwright.impl.WaitableResult.get(WaitableResult.java:54)
+	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:120)
+	at com.microsoft.playwright.impl.Connection.sendMessage(Connection.java:130)
+	at com.microsoft.playwright.impl.ChannelOwner.sendMessage(ChannelOwner.java:106)
+	at com.microsoft.playwright.impl.FrameImpl.clickImpl(FrameImpl.java:252)
+	at com.microsoft.playwright.impl.FrameImpl.lambda$click$8(FrameImpl.java:243)
+	at com.microsoft.playwright.impl.LoggingSupport.lambda$withLogging$0(LoggingSupport.java:36)
+	at com.microsoft.playwright.impl.LoggingSupport.withLogging(LoggingSupport.java:47)
+	at com.microsoft.playwright.impl.ChannelOwner.withLogging(ChannelOwner.java:89)
+	at com.microsoft.playwright.impl.LoggingSupport.withLogging(LoggingSupport.java:35)
+	at com.microsoft.playwright.impl.FrameImpl.click(FrameImpl.java:243)
+	at com.microsoft.playwright.impl.LocatorImpl.click(LocatorImpl.java:160)
+	at com.microsoft.playwright.Locator.click(Locator.java:2406)
+	at page.BMSPage.CTNeckScanBook(BMSPage.java:299)
+	at test.BMSTest.verifyNeckBook(BMSTest.java:102)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+Caused by: com.microsoft.playwright.impl.TargetClosedError: Error {
+  message=&apos;Target page, context or browser has been closed
+  name=&apos;TargetClosedError
+  stack=&apos;TargetClosedError: Target page, context or browser has been closed
+    at DispatcherConnection.dispatch (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-2087115189577318224\package\lib\server\dispatchers\dispatcher.js:273:44)
+    at transport.onmessage (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-2087115189577318224\package\lib\cli\driver.js:52:57)
+    at Immediate._onImmediate (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-2087115189577318224\package\lib\protocol\transport.js:77:34)
+    at process.processImmediate (node:internal/timers:483:21)
+}
+	at com.microsoft.playwright.impl.Connection.dispatch(Connection.java:256)
+	at com.microsoft.playwright.impl.Connection.processOneMessage(Connection.java:211)
+	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:118)
+	... 45 more
+... Removed 31 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyPETCTBook">
+                  </a> <!-- verifyPETCTBook -->
+                  <span class="method-name">verifyPETCTBook</span>
+                  <div class="stack-trace">com.microsoft.playwright.impl.TargetClosedError: Error {
+  message=&apos;Target page, context or browser has been closed
+  name=&apos;TargetClosedError
+  stack=&apos;TargetClosedError: Target page, context or browser has been closed
+    at DispatcherConnection.dispatch (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-2087115189577318224\package\lib\server\dispatchers\dispatcher.js:273:44)
+    at transport.onmessage (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-2087115189577318224\package\lib\cli\driver.js:52:57)
+    at Immediate._onImmediate (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-2087115189577318224\package\lib\protocol\transport.js:77:34)
+    at process.processImmediate (node:internal/timers:483:21)
+}
+	at com.microsoft.playwright.impl.WaitableResult.get(WaitableResult.java:54)
+	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:120)
+	at com.microsoft.playwright.impl.Connection.sendMessage(Connection.java:130)
+	at com.microsoft.playwright.impl.ChannelOwner.sendMessage(ChannelOwner.java:106)
+	at com.microsoft.playwright.impl.FrameImpl.navigateImpl(FrameImpl.java:463)
+	at com.microsoft.playwright.impl.PageImpl.lambda$navigate$46(PageImpl.java:932)
+	at com.microsoft.playwright.impl.LoggingSupport.withLogging(LoggingSupport.java:47)
+	at com.microsoft.playwright.impl.ChannelOwner.withLogging(ChannelOwner.java:89)
+	at com.microsoft.playwright.impl.PageImpl.navigate(PageImpl.java:932)
+	at com.microsoft.playwright.impl.PageImpl.navigate(PageImpl.java:42)
+	at com.microsoft.playwright.Page.navigate(Page.java:5446)
+	at page.BMSPage.PETCTBook(BMSPage.java:331)
+	at test.BMSTest.verifyPETCTBook(BMSTest.java:112)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+Caused by: com.microsoft.playwright.impl.TargetClosedError: Error {
+  message=&apos;Target page, context or browser has been closed
+  name=&apos;TargetClosedError
+  stack=&apos;TargetClosedError: Target page, context or browser has been closed
+    at DispatcherConnection.dispatch (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-2087115189577318224\package\lib\server\dispatchers\dispatcher.js:273:44)
+    at transport.onmessage (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-2087115189577318224\package\lib\cli\driver.js:52:57)
+    at Immediate._onImmediate (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-2087115189577318224\package\lib\protocol\transport.js:77:34)
+    at process.processImmediate (node:internal/timers:483:21)
+}
+	at com.microsoft.playwright.impl.Connection.dispatch(Connection.java:256)
+	at com.microsoft.playwright.impl.Connection.processOneMessage(Connection.java:211)
+	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:118)
+	... 43 more
+... Removed 31 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyRemoveAddress">
+                  </a> <!-- verifyRemoveAddress -->
+                  <span class="method-name">verifyRemoveAddress</span>
+                  <div class="stack-trace">com.microsoft.playwright.impl.TargetClosedError: Error {
+  message=&apos;Target page, context or browser has been closed
+  name=&apos;TargetClosedError
+  stack=&apos;TargetClosedError: Target page, context or browser has been closed
+    at DispatcherConnection.dispatch (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-2087115189577318224\package\lib\server\dispatchers\dispatcher.js:273:44)
+    at transport.onmessage (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-2087115189577318224\package\lib\cli\driver.js:52:57)
+    at Immediate._onImmediate (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-2087115189577318224\package\lib\protocol\transport.js:77:34)
+    at process.processImmediate (node:internal/timers:483:21)
+}
+	at com.microsoft.playwright.impl.WaitableResult.get(WaitableResult.java:54)
+	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:120)
+	at com.microsoft.playwright.impl.Connection.sendMessage(Connection.java:130)
+	at com.microsoft.playwright.impl.ChannelOwner.sendMessage(ChannelOwner.java:106)
+	at com.microsoft.playwright.impl.FrameImpl.clickImpl(FrameImpl.java:252)
+	at com.microsoft.playwright.impl.FrameImpl.lambda$click$8(FrameImpl.java:243)
+	at com.microsoft.playwright.impl.LoggingSupport.lambda$withLogging$0(LoggingSupport.java:36)
+	at com.microsoft.playwright.impl.LoggingSupport.withLogging(LoggingSupport.java:47)
+	at com.microsoft.playwright.impl.ChannelOwner.withLogging(ChannelOwner.java:89)
+	at com.microsoft.playwright.impl.LoggingSupport.withLogging(LoggingSupport.java:35)
+	at com.microsoft.playwright.impl.FrameImpl.click(FrameImpl.java:243)
+	at com.microsoft.playwright.impl.LocatorImpl.click(LocatorImpl.java:160)
+	at com.microsoft.playwright.Locator.click(Locator.java:2406)
+	at page.BMSPage.removeAddress(BMSPage.java:133)
+	at test.BMSTest.verifyRemoveAddress(BMSTest.java:57)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+Caused by: com.microsoft.playwright.impl.TargetClosedError: Error {
+  message=&apos;Target page, context or browser has been closed
+  name=&apos;TargetClosedError
+  stack=&apos;TargetClosedError: Target page, context or browser has been closed
+    at DispatcherConnection.dispatch (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-2087115189577318224\package\lib\server\dispatchers\dispatcher.js:273:44)
+    at transport.onmessage (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-2087115189577318224\package\lib\cli\driver.js:52:57)
+    at Immediate._onImmediate (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-2087115189577318224\package\lib\protocol\transport.js:77:34)
+    at process.processImmediate (node:internal/timers:483:21)
+}
+	at com.microsoft.playwright.impl.Connection.dispatch(Connection.java:256)
+	at com.microsoft.playwright.impl.Connection.processOneMessage(Connection.java:211)
+	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:118)
+	... 45 more
+... Removed 31 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyResendOTP">
+                  </a> <!-- verifyResendOTP -->
+                  <span class="method-name">verifyResendOTP</span>
+                  <div class="stack-trace">com.microsoft.playwright.impl.TargetClosedError: Error {
+  message=&apos;Target page, context or browser has been closed
+  name=&apos;TargetClosedError
+  stack=&apos;TargetClosedError: Target page, context or browser has been closed
+    at DispatcherConnection.dispatch (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-2087115189577318224\package\lib\server\dispatchers\dispatcher.js:273:44)
+    at transport.onmessage (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-2087115189577318224\package\lib\cli\driver.js:52:57)
+    at Immediate._onImmediate (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-2087115189577318224\package\lib\protocol\transport.js:77:34)
+    at process.processImmediate (node:internal/timers:483:21)
+}
+	at com.microsoft.playwright.impl.WaitableResult.get(WaitableResult.java:54)
+	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:120)
+	at com.microsoft.playwright.impl.Connection.sendMessage(Connection.java:130)
+	at com.microsoft.playwright.impl.ChannelOwner.sendMessage(ChannelOwner.java:106)
+	at com.microsoft.playwright.impl.FrameImpl.clickImpl(FrameImpl.java:252)
+	at com.microsoft.playwright.impl.FrameImpl.lambda$click$8(FrameImpl.java:243)
+	at com.microsoft.playwright.impl.LoggingSupport.lambda$withLogging$0(LoggingSupport.java:36)
+	at com.microsoft.playwright.impl.LoggingSupport.withLogging(LoggingSupport.java:47)
+	at com.microsoft.playwright.impl.ChannelOwner.withLogging(ChannelOwner.java:89)
+	at com.microsoft.playwright.impl.LoggingSupport.withLogging(LoggingSupport.java:35)
+	at com.microsoft.playwright.impl.FrameImpl.click(FrameImpl.java:243)
+	at com.microsoft.playwright.impl.LocatorImpl.click(LocatorImpl.java:160)
+	at com.microsoft.playwright.Locator.click(Locator.java:2406)
+	at page.BMSPage.ResendOTP(BMSPage.java:364)
+	at test.BMSTest.verifyResendOTP(BMSTest.java:122)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+Caused by: com.microsoft.playwright.impl.TargetClosedError: Error {
+  message=&apos;Target page, context or browser has been closed
+  name=&apos;TargetClosedError
+  stack=&apos;TargetClosedError: Target page, context or browser has been closed
+    at DispatcherConnection.dispatch (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-2087115189577318224\package\lib\server\dispatchers\dispatcher.js:273:44)
+    at transport.onmessage (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-2087115189577318224\package\lib\cli\driver.js:52:57)
+    at Immediate._onImmediate (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-2087115189577318224\package\lib\protocol\transport.js:77:34)
+    at process.processImmediate (node:internal/timers:483:21)
+}
+	at com.microsoft.playwright.impl.Connection.dispatch(Connection.java:256)
+	at com.microsoft.playwright.impl.Connection.processOneMessage(Connection.java:211)
+	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:118)
+	... 45 more
+... Removed 31 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyUSGBook">
+                  </a> <!-- verifyUSGBook -->
+                  <span class="method-name">verifyUSGBook</span>
+                  <div class="stack-trace">com.microsoft.playwright.impl.TargetClosedError: Error {
+  message=&apos;Target page, context or browser has been closed
+  name=&apos;TargetClosedError
+  stack=&apos;TargetClosedError: Target page, context or browser has been closed
+    at DispatcherConnection.dispatch (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-2087115189577318224\package\lib\server\dispatchers\dispatcher.js:273:44)
+    at transport.onmessage (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-2087115189577318224\package\lib\cli\driver.js:52:57)
+    at Immediate._onImmediate (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-2087115189577318224\package\lib\protocol\transport.js:77:34)
+    at process.processImmediate (node:internal/timers:483:21)
+}
+	at com.microsoft.playwright.impl.WaitableResult.get(WaitableResult.java:54)
+	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:120)
+	at com.microsoft.playwright.impl.Connection.sendMessage(Connection.java:130)
+	at com.microsoft.playwright.impl.ChannelOwner.sendMessage(ChannelOwner.java:106)
+	at com.microsoft.playwright.impl.FrameImpl.navigateImpl(FrameImpl.java:463)
+	at com.microsoft.playwright.impl.PageImpl.lambda$navigate$46(PageImpl.java:932)
+	at com.microsoft.playwright.impl.LoggingSupport.withLogging(LoggingSupport.java:47)
+	at com.microsoft.playwright.impl.ChannelOwner.withLogging(ChannelOwner.java:89)
+	at com.microsoft.playwright.impl.PageImpl.navigate(PageImpl.java:932)
+	at com.microsoft.playwright.impl.PageImpl.navigate(PageImpl.java:42)
+	at com.microsoft.playwright.Page.navigate(Page.java:5446)
+	at page.BMSPage.bookUSG(BMSPage.java:520)
+	at test.BMSTest.verifyUSGBook(BMSTest.java:150)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+Caused by: com.microsoft.playwright.impl.TargetClosedError: Error {
+  message=&apos;Target page, context or browser has been closed
+  name=&apos;TargetClosedError
+  stack=&apos;TargetClosedError: Target page, context or browser has been closed
+    at DispatcherConnection.dispatch (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-2087115189577318224\package\lib\server\dispatchers\dispatcher.js:273:44)
+    at transport.onmessage (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-2087115189577318224\package\lib\cli\driver.js:52:57)
+    at Immediate._onImmediate (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-2087115189577318224\package\lib\protocol\transport.js:77:34)
+    at process.processImmediate (node:internal/timers:483:21)
+}
+	at com.microsoft.playwright.impl.Connection.dispatch(Connection.java:256)
+	at com.microsoft.playwright.impl.Connection.processOneMessage(Connection.java:211)
+	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:118)
+	... 43 more
+... Removed 31 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyXRAYBook">
+                  </a> <!-- verifyXRAYBook -->
+                  <span class="method-name">verifyXRAYBook</span>
+                  <div class="stack-trace">com.microsoft.playwright.impl.TargetClosedError: Error {
+  message=&apos;Target page, context or browser has been closed
+  name=&apos;TargetClosedError
+  stack=&apos;TargetClosedError: Target page, context or browser has been closed
+    at DispatcherConnection.dispatch (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-2087115189577318224\package\lib\server\dispatchers\dispatcher.js:273:44)
+    at transport.onmessage (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-2087115189577318224\package\lib\cli\driver.js:52:57)
+    at Immediate._onImmediate (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-2087115189577318224\package\lib\protocol\transport.js:77:34)
+    at process.processImmediate (node:internal/timers:483:21)
+}
+	at com.microsoft.playwright.impl.WaitableResult.get(WaitableResult.java:54)
+	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:120)
+	at com.microsoft.playwright.impl.Connection.sendMessage(Connection.java:130)
+	at com.microsoft.playwright.impl.ChannelOwner.sendMessage(ChannelOwner.java:106)
+	at com.microsoft.playwright.impl.FrameImpl.navigateImpl(FrameImpl.java:463)
+	at com.microsoft.playwright.impl.PageImpl.lambda$navigate$46(PageImpl.java:932)
+	at com.microsoft.playwright.impl.LoggingSupport.withLogging(LoggingSupport.java:47)
+	at com.microsoft.playwright.impl.ChannelOwner.withLogging(ChannelOwner.java:89)
+	at com.microsoft.playwright.impl.PageImpl.navigate(PageImpl.java:932)
+	at com.microsoft.playwright.impl.PageImpl.navigate(PageImpl.java:42)
+	at com.microsoft.playwright.Page.navigate(Page.java:5446)
+	at page.BMSPage.XRAYBook(BMSPage.java:494)
+	at test.BMSTest.verifyXRAYBook(BMSTest.java:145)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+Caused by: com.microsoft.playwright.impl.TargetClosedError: Error {
+  message=&apos;Target page, context or browser has been closed
+  name=&apos;TargetClosedError
+  stack=&apos;TargetClosedError: Target page, context or browser has been closed
+    at DispatcherConnection.dispatch (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-2087115189577318224\package\lib\server\dispatchers\dispatcher.js:273:44)
+    at transport.onmessage (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-2087115189577318224\package\lib\cli\driver.js:52:57)
+    at Immediate._onImmediate (C:\Users\HAIPPY~1\AppData\Local\Temp\playwright-java-2087115189577318224\package\lib\protocol\transport.js:77:34)
+    at process.processImmediate (node:internal/timers:483:21)
+}
+	at com.microsoft.playwright.impl.Connection.dispatch(Connection.java:256)
+	at com.microsoft.playwright.impl.Connection.processOneMessage(Connection.java:211)
+	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:118)
+	... 43 more
+... Removed 31 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-BMS_Test_Suite-class-failed -->
+          <div class="suite-BMS_Test_Suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">test.BMSTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyBrokenLinksTest">
+                  </a> <!-- verifyBrokenLinksTest -->
+                  <span class="method-name">verifyBrokenLinksTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyCheckNavigationFlow">
+                  </a> <!-- verifyCheckNavigationFlow -->
+                  <span class="method-name">verifyCheckNavigationFlow</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyTitleTest">
+                  </a> <!-- verifyTitleTest -->
+                  <span class="method-name">verifyTitleTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyUrlTest">
+                  </a> <!-- verifyUrlTest -->
+                  <span class="method-name">verifyUrlTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-BMS_Test_Suite-class-passed -->
+        </div> <!-- panel BMS_Test_Suite -->
+        <div panel-name="test-xml-BMS_Test_Suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">C:\Users\Haippyfit\eclipse-workspace\BMS\testng.xml</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <pre>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE suite SYSTEM &quot;https://testng.org/testng-1.0.dtd&quot;&gt;
+&lt;suite name=&quot;BMS Test Suite&quot; guice-stage=&quot;DEVELOPMENT&quot; verbose=&quot;0&quot;&gt;
+  &lt;listeners&gt;
+    &lt;listener class-name=&quot;listeners.ExtentReporterNG&quot;/&gt;
+  &lt;/listeners&gt;
+  &lt;test thread-count=&quot;5&quot; name=&quot;BMS Functional Tests&quot; verbose=&quot;0&quot;&gt;
+    &lt;classes&gt;
+      &lt;class name=&quot;test.BMSTest&quot;/&gt;
+    &lt;/classes&gt;
+  &lt;/test&gt; &lt;!-- BMS Functional Tests --&gt;
+&lt;/suite&gt; &lt;!-- BMS Test Suite --&gt;
+            </pre>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="testlist-BMS_Test_Suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Tests for BMS Test Suite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <ul>
+              <li>
+                <span class="test-name">BMS Functional Tests (1 class)</span>
+              </li>
+            </ul>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="group-BMS_Test_Suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Groups for BMS Test Suite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="times-BMS_Test_Suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Times for BMS Test Suite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="times-div">
+              <script type="text/javascript">
+suiteTableInitFunctions.push('tableData_BMS_Test_Suite');
+function tableData_BMS_Test_Suite() {
+var data = new google.visualization.DataTable();
+data.addColumn('number', 'Number');
+data.addColumn('string', 'Method');
+data.addColumn('string', 'Class');
+data.addColumn('number', 'Time (ms)');
+data.addRows(28);
+data.setCell(0, 0, 0)
+data.setCell(0, 1, 'verifyCheckNavigationFlow')
+data.setCell(0, 2, 'test.BMSTest')
+data.setCell(0, 3, 22097);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'verifyLogin')
+data.setCell(1, 2, 'test.BMSTest')
+data.setCell(1, 3, 324);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'verifyBrokenLinksTest')
+data.setCell(2, 2, 'test.BMSTest')
+data.setCell(2, 3, 91);
+data.setCell(3, 0, 3)
+data.setCell(3, 1, 'verifyUrlTest')
+data.setCell(3, 2, 'test.BMSTest')
+data.setCell(3, 3, 11);
+data.setCell(4, 0, 4)
+data.setCell(4, 1, 'verifyTitleTest')
+data.setCell(4, 2, 'test.BMSTest')
+data.setCell(4, 3, 9);
+data.setCell(5, 0, 5)
+data.setCell(5, 1, 'verifyAddAddress')
+data.setCell(5, 2, 'test.BMSTest')
+data.setCell(5, 3, 9);
+data.setCell(6, 0, 6)
+data.setCell(6, 1, 'verifyResendOTP')
+data.setCell(6, 2, 'test.BMSTest')
+data.setCell(6, 3, 7);
+data.setCell(7, 0, 7)
+data.setCell(7, 1, 'verifyRemoveAddress')
+data.setCell(7, 2, 'test.BMSTest')
+data.setCell(7, 3, 6);
+data.setCell(8, 0, 8)
+data.setCell(8, 1, 'verifyMRIAbdomenBook')
+data.setCell(8, 2, 'test.BMSTest')
+data.setCell(8, 3, 5);
+data.setCell(9, 0, 9)
+data.setCell(9, 1, 'verifyECGBook')
+data.setCell(9, 2, 'test.BMSTest')
+data.setCell(9, 3, 4);
+data.setCell(10, 0, 10)
+data.setCell(10, 1, 'verifyEditProfile')
+data.setCell(10, 2, 'test.BMSTest')
+data.setCell(10, 3, 4);
+data.setCell(11, 0, 11)
+data.setCell(11, 1, 'verifyMasterHealthCheckup')
+data.setCell(11, 2, 'test.BMSTest')
+data.setCell(11, 3, 3);
+data.setCell(12, 0, 12)
+data.setCell(12, 1, 'verifyNeckBook')
+data.setCell(12, 2, 'test.BMSTest')
+data.setCell(12, 3, 3);
+data.setCell(13, 0, 13)
+data.setCell(13, 1, 'verifyXRAYBook')
+data.setCell(13, 2, 'test.BMSTest')
+data.setCell(13, 3, 3);
+data.setCell(14, 0, 14)
+data.setCell(14, 1, 'verifyCervicalMRIBook')
+data.setCell(14, 2, 'test.BMSTest')
+data.setCell(14, 3, 3);
+data.setCell(15, 0, 15)
+data.setCell(15, 1, 'verifyCTBrainBook')
+data.setCell(15, 2, 'test.BMSTest')
+data.setCell(15, 3, 2);
+data.setCell(16, 0, 16)
+data.setCell(16, 1, 'verifyKneeMRIBook')
+data.setCell(16, 2, 'test.BMSTest')
+data.setCell(16, 3, 2);
+data.setCell(17, 0, 17)
+data.setCell(17, 1, 'verifyMRIBrainBook')
+data.setCell(17, 2, 'test.BMSTest')
+data.setCell(17, 3, 2);
+data.setCell(18, 0, 18)
+data.setCell(18, 1, 'verifyCTBook')
+data.setCell(18, 2, 'test.BMSTest')
+data.setCell(18, 3, 2);
+data.setCell(19, 0, 19)
+data.setCell(19, 1, 'verifyCTChestBook')
+data.setCell(19, 2, 'test.BMSTest')
+data.setCell(19, 3, 2);
+data.setCell(20, 0, 20)
+data.setCell(20, 1, 'verifyInvalidOTP')
+data.setCell(20, 2, 'test.BMSTest')
+data.setCell(20, 3, 2);
+data.setCell(21, 0, 21)
+data.setCell(21, 1, 'verifyCTPNSScanBook')
+data.setCell(21, 2, 'test.BMSTest')
+data.setCell(21, 3, 2);
+data.setCell(22, 0, 22)
+data.setCell(22, 1, 'verifyGoldMHCBook')
+data.setCell(22, 2, 'test.BMSTest')
+data.setCell(22, 3, 2);
+data.setCell(23, 0, 23)
+data.setCell(23, 1, 'verifyPETCTBook')
+data.setCell(23, 2, 'test.BMSTest')
+data.setCell(23, 3, 2);
+data.setCell(24, 0, 24)
+data.setCell(24, 1, 'testScreenshotCapture')
+data.setCell(24, 2, 'test.BMSTest')
+data.setCell(24, 3, 1);
+data.setCell(25, 0, 25)
+data.setCell(25, 1, 'verifyCTAbdomenBook')
+data.setCell(25, 2, 'test.BMSTest')
+data.setCell(25, 3, 1);
+data.setCell(26, 0, 26)
+data.setCell(26, 1, 'verifyUSGBook')
+data.setCell(26, 2, 'test.BMSTest')
+data.setCell(26, 3, 1);
+data.setCell(27, 0, 27)
+data.setCell(27, 1, 'verifyEditMobileLogin')
+data.setCell(27, 2, 'test.BMSTest')
+data.setCell(27, 3, 1);
+window.suiteTableData['BMS_Test_Suite']= { tableData: data, tableDiv: 'times-div-BMS_Test_Suite'}
+return data;
+}
+              </script>
+              <span class="suite-total-time">Total running time: 22 seconds</span>
+              <div id="times-div-BMS_Test_Suite">
+              </div> <!-- times-div-BMS_Test_Suite -->
+            </div> <!-- times-div -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="reporter-BMS_Test_Suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Reporter output for BMS Test Suite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="ignored-methods-BMS_Test_Suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">0 ignored methods</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="chronological-BMS_Test_Suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Methods in chronological order</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="chronological-class">
+              <div class="chronological-class-name">test.BMSTest</div> <!-- chronological-class-name -->
+              <div class="configuration-test before">
+                <span class="method-name">verifsetup</span>
+                <span class="method-start">0 ms</span>
+              </div> <!-- configuration-test before -->
+              <div class="test-method">
+                <span class="method-name">verifyUrlTest</span>
+                <span class="method-start">19974 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">verifyTitleTest</span>
+                <span class="method-start">19998 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">verifyBrokenLinksTest</span>
+                <span class="method-start">20011 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">verifyCheckNavigationFlow</span>
+                <span class="method-start">20104 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">verifyLogin</span>
+                <span class="method-start">42204 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">verifyEditProfile</span>
+                <span class="method-start">42590 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">verifyAddAddress</span>
+                <span class="method-start">42604 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">verifyRemoveAddress</span>
+                <span class="method-start">42628 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">verifyMRIAbdomenBook</span>
+                <span class="method-start">42644 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">verifyMRIBrainBook</span>
+                <span class="method-start">42657 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">verifyCervicalMRIBook</span>
+                <span class="method-start">42666 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">verifyKneeMRIBook</span>
+                <span class="method-start">42676 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">verifyCTBook</span>
+                <span class="method-start">42687 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">verifyCTAbdomenBook</span>
+                <span class="method-start">42694 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">verifyCTBrainBook</span>
+                <span class="method-start">42704 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">verifyCTChestBook</span>
+                <span class="method-start">42710 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">verifyNeckBook</span>
+                <span class="method-start">42719 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">verifyCTPNSScanBook</span>
+                <span class="method-start">42726 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">verifyPETCTBook</span>
+                <span class="method-start">42735 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">verifyEditMobileLogin</span>
+                <span class="method-start">42742 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">verifyResendOTP</span>
+                <span class="method-start">42750 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">verifyInvalidOTP</span>
+                <span class="method-start">42760 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">verifyMasterHealthCheckup</span>
+                <span class="method-start">42770 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">verifyGoldMHCBook</span>
+                <span class="method-start">42776 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">verifyXRAYBook</span>
+                <span class="method-start">42783 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">verifyUSGBook</span>
+                <span class="method-start">42791 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">verifyECGBook</span>
+                <span class="method-start">42796 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">testScreenshotCapture</span>
+                <span class="method-start">42805 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-test after">
+                <span class="method-name">teardown</span>
+                <span class="method-start">42809 ms</span>
+              </div> <!-- configuration-test after -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+      </div> <!-- main-panel-root -->
+    </div> <!-- wrapper -->
+  </body>
+<script type="text/javascript" src="testng-reports2.js"></script>
+</html>

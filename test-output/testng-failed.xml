@@ -5,9 +5,23 @@
     <classes>
       <class name="test.BMSTest">
         <methods>
+          <include name="verifyECGBook"/>
+          <include name="verifyNeckBook"/>
+          <include name="verifyCTBrainBook"/>
+          <include name="verifyUrlTest"/>
+          <include name="verifyRemoveAddress"/>
+          <include name="verifyCTChestBook"/>
           <include name="teardown"/>
           <include name="verifsetup"/>
-          <include name="VerifMasterHealthchckup"/>
+          <include name="verifyCTPNSScanBook"/>
+          <include name="verifyAddAddress"/>
+          <include name="verifyUSGBook"/>
+          <include name="verifyMasterHealthCheckup"/>
+          <include name="testScreenshotCapture"/>
+          <include name="verifyGoldMHCBook"/>
+          <include name="verifyLogin"/>
+          <include name="verifyEditProfile"/>
+          <include name="verifyCTAbdomenBook"/>
         </methods>
       </class> <!-- test.BMSTest -->
     </classes>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [BMS Test Suite]" guice-stage="DEVELOPMENT" verbose="0">
+  <listeners>
+    <listener class-name="listeners.ExtentReporterNG"/>
+  </listeners>
+  <test thread-count="5" name="BMS Functional Tests(failed)" verbose="0">
+    <classes>
+      <class name="test.BMSTest">
+        <methods>
+          <include name="verifyMRIAbdomenBook"/>
+          <include name="verifyCTBook"/>
+          <include name="verifyMRIBrainBook"/>
+          <include name="verifyXRAYBook"/>
+          <include name="verifyCTPNSScanBook"/>
+          <include name="verifyAddAddress"/>
+          <include name="testScreenshotCapture"/>
+          <include name="verifyMasterHealthCheckup"/>
+          <include name="verifyLogin"/>
+          <include name="verifyEditProfile"/>
+          <include name="verifyCTAbdomenBook"/>
+          <include name="verifyECGBook"/>
+          <include name="verifyNeckBook"/>
+          <include name="verifyCTBrainBook"/>
+          <include name="verifyRemoveAddress"/>
+          <include name="verifyCTChestBook"/>
+          <include name="teardown"/>
+          <include name="verifsetup"/>
+          <include name="verifyInvalidOTP"/>
+          <include name="verifyUSGBook"/>
+          <include name="verifyKneeMRIBook"/>
+          <include name="verifyEditMobileLogin"/>
+          <include name="verifyCervicalMRIBook"/>
+          <include name="verifyGoldMHCBook"/>
+          <include name="verifyResendOTP"/>
+          <include name="verifyPETCTBook"/>
+        </methods>
+      </class> <!-- test.BMSTest -->
+    </classes>
+  </test> <!-- BMS Functional Tests(failed) -->
+</suite> <!-- Failed suite [BMS Test Suite] -->
