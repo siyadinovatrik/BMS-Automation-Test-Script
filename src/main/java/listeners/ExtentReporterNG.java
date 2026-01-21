@@ -78,7 +78,7 @@ public class ExtentReporterNG implements ITestListener {
             return;  // Skip if no page
         }
 
-        try {
+        try { 
             // Create screenshots directory if it doesn't exist
             String screenshotDir = "test-output/screenshots/";
             Files.createDirectories(Paths.get(screenshotDir));
@@ -86,7 +86,7 @@ public class ExtentReporterNG implements ITestListener {
             // Generate unique filename
             String timestamp = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMdd_HHmmss"));
             String fileName = testName + "_" + timestamp + ".png";
-            String filePath = screenshotDir + fileName;
+            String filePath = screenshotDir + fileName; 
 
             // Take screenshot using Playwright
             byte[] screenshotBytes = webPage.screenshot();

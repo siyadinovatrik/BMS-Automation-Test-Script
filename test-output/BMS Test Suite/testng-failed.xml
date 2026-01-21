@@ -4,18 +4,142 @@
   <listeners>
     <listener class-name="listeners.ExtentReporterNG"/>
   </listeners>
-  <test thread-count="5" name="BMS Functional Tests(failed)">
+  <test thread-count="5" name="Smoke Tests(failed)">
+    <classes>
+      <class name="test.BMSTest">
+        <methods>
+          <include name="verifyLogin"/>
+          <include name="teardown"/>
+          <include name="verifsetup"/>
+        </methods>
+      </class> <!-- test.BMSTest -->
+    </classes>
+  </test> <!-- Smoke Tests(failed) -->
+  <test thread-count="5" name="Sanity Tests(failed)">
+    <classes>
+      <class name="test.BMSTest">
+        <methods>
+          <include name="verifyMRIAbdomenBook"/>
+          <include name="verifyMRIBrainBook"/>
+          <include name="verifyCTBook"/>
+          <include name="teardown"/>
+          <include name="verifsetup"/>
+        </methods>
+      </class> <!-- test.BMSTest -->
+    </classes>
+  </test> <!-- Sanity Tests(failed) -->
+  <test thread-count="5" name="Regression Tests(failed)">
     <classes>
       <class name="test.BMSTest">
         <methods>
           <include name="verifyECGBook"/>
+          <include name="verifyNeckBook"/>
+          <include name="verifyCTBrainBook"/>
+          <include name="verifyMRIAbdomenBook"/>
+          <include name="verifyCTBook"/>
+          <include name="verifyMRIBrainBook"/>
+          <include name="verifyRemoveAddress"/>
+          <include name="teardown"/>
+          <include name="verifyCTChestBook"/>
+          <include name="verifyCTPNSScanBook"/>
+          <include name="verifsetup"/>
+          <include name="verifyAddAddress"/>
+          <include name="verifyKneeMRIBook"/>
+          <include name="verifyUSGBook"/>
+          <include name="verifyCervicalMRIBook"/>
+          <include name="verifyLogin"/>
+          <include name="verifyPETCTBook"/>
+          <include name="verifyEditProfile"/>
+          <include name="verifyCTAbdomenBook"/>
+        </methods>
+      </class> <!-- test.BMSTest -->
+    </classes>
+  </test> <!-- Regression Tests(failed) -->
+  <test thread-count="5" name="Booking Tests(failed)">
+    <classes>
+      <class name="test.BMSTest">
+        <methods>
+          <include name="verifyECGBook"/>
+          <include name="verifyNeckBook"/>
+          <include name="verifyMRIAbdomenBook"/>
+          <include name="verifyCTBrainBook"/>
+          <include name="verifyMRIBrainBook"/>
+          <include name="verifyCTBook"/>
+          <include name="verifyXRAYBook"/>
+          <include name="verifyCTChestBook"/>
+          <include name="teardown"/>
+          <include name="verifyCTPNSScanBook"/>
+          <include name="verifsetup"/>
+          <include name="verifyKneeMRIBook"/>
+          <include name="verifyUSGBook"/>
+          <include name="verifyCervicalMRIBook"/>
+          <include name="verifyPETCTBook"/>
+          <include name="verifyCTAbdomenBook"/>
+        </methods>
+      </class> <!-- test.BMSTest -->
+    </classes>
+  </test> <!-- Booking Tests(failed) -->
+  <test thread-count="5" name="Profile Tests(failed)">
+    <classes>
+      <class name="test.BMSTest">
+        <methods>
+          <include name="verifyEditMobileLogin"/>
+          <include name="verifyResendOTP"/>
+          <include name="verifyLogin"/>
+          <include name="verifyEditProfile"/>
+          <include name="verifyRemoveAddress"/>
+          <include name="teardown"/>
+          <include name="verifyInvalidOTP"/>
+          <include name="verifsetup"/>
+          <include name="verifyAddAddress"/>
+        </methods>
+      </class> <!-- test.BMSTest -->
+    </classes>
+  </test> <!-- Profile Tests(failed) -->
+  <test thread-count="5" name="Health Checkup Tests(failed)">
+    <classes>
+      <class name="test.BMSTest">
+        <methods>
           <include name="verifyMasterHealthCheckup"/>
           <include name="verifyGoldMHCBook"/>
           <include name="teardown"/>
           <include name="verifsetup"/>
-          <include name="verifyUSGBook"/>
         </methods>
       </class> <!-- test.BMSTest -->
     </classes>
-  </test> <!-- BMS Functional Tests(failed) -->
+  </test> <!-- Health Checkup Tests(failed) -->
+  <test thread-count="5" name="All Tests(failed)">
+    <classes>
+      <class name="test.BMSTest">
+        <methods>
+          <include name="verifyMRIAbdomenBook"/>
+          <include name="verifyMRIBrainBook"/>
+          <include name="verifyCTBook"/>
+          <include name="VerifplatinumMHCBook"/>
+          <include name="verifyXRAYBook"/>
+          <include name="verifyCTPNSScanBook"/>
+          <include name="verifyAddAddress"/>
+          <include name="verifyMasterHealthCheckup"/>
+          <include name="verifyLogin"/>
+          <include name="verifyEditProfile"/>
+          <include name="verifyCTAbdomenBook"/>
+          <include name="verifyECGBook"/>
+          <include name="verifyNeckBook"/>
+          <include name="verifyCTBrainBook"/>
+          <include name="verifyRemoveAddress"/>
+          <include name="verifyCTChestBook"/>
+          <include name="teardown"/>
+          <include name="verifyInvalidOTP"/>
+          <include name="verifsetup"/>
+          <include name="verifyUSGBook"/>
+          <include name="verifyKneeMRIBook"/>
+          <include name="verifyEditMobileLogin"/>
+          <include name="verifyCervicalMRIBook"/>
+          <include name="verifyGoldMHCBook"/>
+          <include name="verifyResendOTP"/>
+          <include name="verifyPETCTBook"/>
+        </methods>
+      </class> <!-- test.BMSTest -->
+    </classes>
+  </test> <!-- All Tests(failed) -->
 </suite> <!-- Failed suite [BMS Test Suite] -->

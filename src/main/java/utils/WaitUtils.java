@@ -9,7 +9,7 @@ public class WaitUtils {
     
     public static void waitForTimeout(int milliseconds) {
         try {
-            Thread.sleep(milliseconds);
+            Thread.sleep(milliseconds); 
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();
         }

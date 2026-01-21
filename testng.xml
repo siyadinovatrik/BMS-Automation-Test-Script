@@ -1,11 +1,105 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 
-<suite name="BMS Test Suite">
+<suite name="BMS Test Suite" parallel="none">
     <listeners>
         <listener class-name="listeners.ExtentReporterNG"/>
     </listeners>
 
-    <test name="BMS Functional Tests">
+    <!-- Smoke Tests - Critical basic functionality verification -->
+    <test name="Smoke Tests" preserve-order="true">
+        <classes>
+            <class name="test.BMSTest">
+                <methods>
+                    <include name="verifyUrlTest"/>
+                    <include name="verifyTitleTest"/>
+                    <include name="verifyBrokenLinksTest"/>
+                    <include name="verifyCheckNavigationFlow"/>
+                    <include name="verifyLogin"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!-- Sanity Tests - Critical user journey validation -->
+    <test name="Sanity Tests" preserve-order="true">
+        <classes>
+            <class name="test.BMSTest">
+                <methods>
+                    <include name="verifyUrlTest"/>
+                    <include name="verifyTitleTest"/>
+                    <include name="verifyLogin"/>
+                    <include name="verifyAddAddress"/>
+                    <include name="verifyMRIAbdomenBook"/>
+                    <include name="verifyMRIBrainBook"/>
+                    <include name="verifyCTBook"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!-- Regression Tests - Complete test suite validation -->
+    <test name="Regression Tests" preserve-order="true">
+        <classes>
+            <class name="test.BMSTest"/>
+        </classes>
+    </test>
+
+    <!-- Booking Tests - All booking related functionality -->
+    <test name="Booking Tests" preserve-order="true">
+        <classes>
+            <class name="test.BMSTest">
+                <methods>
+                    <include name="verifyMRIAbdomenBook"/>
+                    <include name="verifyMRIBrainBook"/>
+                    <include name="verifyCervicalMRIBook"/>
+                    <include name="verifyKneeMRIBook"/>
+                    <include name="verifyCTBook"/>
+                    <include name="verifyCTAbdomenBook"/>
+                    <include name="verifyCTBrainBook"/>
+                    <include name="verifyCTChestBook"/>
+                    <include name="verifyNeckBook"/>
+                    <include name="verifyCTPNSScanBook"/>
+                    <include name="verifyPETCTBook"/>
+                    <include name="verifyXRAYBook"/>
+                    <include name="verifyUSGBook"/>
+                    <include name="verifyECGBook"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!-- Profile Tests - User profile and account management -->
+    <test name="Profile Tests" preserve-order="true">
+        <classes>
+            <class name="test.BMSTest">
+                <methods>
+                    <include name="verifyLogin"/>
+                    <include name="verifyEditProfile"/>
+                    <include name="verifyAddAddress"/>
+                    <include name="verifyRemoveAddress"/>
+                    <include name="verifyEditMobileLogin"/>
+                    <include name="verifyResendOTP"/>
+                    <include name="verifyInvalidOTP"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!-- Health Checkup Tests - MHC related functionality -->
+    <test name="Health Checkup Tests" preserve-order="true">
+        <classes>
+            <class name="test.BMSTest">
+                <methods>
+                    <include name="verifyMasterHealthCheckup"/>
+                    <include name="verifyGoldMHCBook"/>
+                    <include name="BookPlatinumMHCBook"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!-- All Tests - Complete test suite (run this for comprehensive testing) -->
+    <test name="All Tests" preserve-order="true">
         <classes>
             <class name="test.BMSTest"/>
         </classes>

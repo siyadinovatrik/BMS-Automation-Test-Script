@@ -14,7 +14,7 @@ public class ConfigReader {
             properties.load(file);
         } catch (IOException e) {
             System.err.println("Error loading configuration: " + e.getMessage());
-        }
+        } 
     }
     
     public static String getProperty(String key) {
@@ -51,5 +51,14 @@ public class ConfigReader {
     
     public static int getImplicitWait() {
         return Integer.parseInt(getProperty("implicit.wait"));
+    }
+    public static String getAdminUrl() {
+        return getProperty("Admin.url");
+    }
+    public static String getAdminTestMobileNumber() {
+        return getProperty("Admin.number");
+    }
+    public static String getAdminTestpasswd() {
+        return getProperty("Admin.psswd");
     }
 }

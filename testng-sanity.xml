@@ -1,0 +1,35 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite name="BMS Sanity Test Suite">
+    <listeners>
+        <listener class-name="listeners.ExtentReporterNG"/>
+    </listeners>
+
+    <test name="Sanity Tests" preserve-order="true">
+        <classes>
+            <class name="test.BMSTest">
+                <methods>
+                    <include name="verifyUrlTest"/>
+                    <include name="verifyTitleTest"/>
+                    <include name="verifyLogin"/>
+                    <include name="verifyAddAddress"/>
+                    <include name="verifyMRIAbdomenBook"/>
+                    <include name="verifyMRIBrainBook"/>
+                    <include name="verifyCTBook"/>
+                    <include name="verifyCTAbdomenBook"/>
+                    <include name="verifyCTBrainBook"/>
+                    <include name="verifyCTChestBook"/>
+                    <include name="verifyNeckBook"/>
+                    <include name="verifyCTPNSScanBook"/>
+                    <include name="verifyPETCTBook"/>
+                    <include name="verifyMasterHealthCheckup"/>
+                    <include name="verifyGoldMHCBook"/>
+                    <include name="VerifplatinumMHCBook"/>
+                    <include name="verifyXRAYBook"/>
+                    <include name="verifyUSGBook"/>
+                    <include name="verifyECGBook"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

@@ -7,9 +7,13 @@ import java.net.URL;
 import java.util.List;
 import java.util.regex.Pattern;
 
+import com.microsoft.playwright.Browser;
+import com.microsoft.playwright.BrowserContext;
+import com.microsoft.playwright.BrowserType;
 import com.microsoft.playwright.ElementHandle;
 import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.Page;
+import com.microsoft.playwright.Playwright;
 import com.microsoft.playwright.options.AriaRole;
 import com.microsoft.playwright.options.WaitForSelectorState;
 import config.ConfigReader;
@@ -19,9 +23,17 @@ import config.ConfigReader;
 public class BMSPage {
 
 	  public Page page;
-	    
+	  public Playwright playwright;
+	  public Browser browser;
+
 	    public BMSPage(Page page) {
 	        this.page = page;
+	    }
+
+	    public BMSPage(Page page, Playwright playwright, Browser browser) {
+	        this.page = page;
+	        this.playwright = playwright;
+	        this.browser = browser;
 	    }
 	    
 	  public void verifyUrl()
@@ -87,10 +99,11 @@ public class BMSPage {
 	
 	  public void login() throws Exception
 	  {
+		      page.navigate(ConfigReader.getUatUrl());
 		      page.waitForLoadState();
 		      page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Login/ Sign Up")).click();
 		      page.getByPlaceholder("Enter Mobile Number").click();
-		      page.getByPlaceholder("Enter Mobile Number").fill("9778350198");
+		      page.getByPlaceholder("Enter Mobile Number").fill(ConfigReader.getTestMobileNumber());
 		      page.waitForLoadState();
 		      page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Send OTP")).click();
 		      page.getByRole(AriaRole.TEXTBOX).first().waitFor(new Locator.WaitForOptions().setState(WaitForSelectorState.VISIBLE));
@@ -141,41 +154,99 @@ public class BMSPage {
 		  page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("MRI Scan").setExact(true)).click();
 	      page.getByText("Abdomen").click();
 	      page.getByPlaceholder("Enter Full Name").fill("SIYADMRIAbdomenTest");
-	      page.getByPlaceholder("Enter Phone Number").fill("9778350198");
+	      page.getByPlaceholder("Enter Phone Number").fill(ConfigReader.getTestMobileNumber());
 	      page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Book an MRI Scan")).first().click();
-	      page.getByRole(AriaRole.TEXTBOX, new Page.GetByRoleOptions().setName("Enter OTP")).fill("1234");
+	      page.getByRole(AriaRole.TEXTBOX, new Page.GetByRoleOptions().setName("Enter OTP")).fill(ConfigReader.getTestOTP());
 	      page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Proceed")).click();
 	      page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Submit")).click();
 	      assertThat(page.locator("body")).containsText("Booking Confirmed!");
-	      page.locator("button").filter(new Locator.FilterOptions().setHasText("Back to Home")).first().click();
-	    }
+	      page.getByText("View my Booking").first().click();
+
+	      String BookingIDWithHash = page.locator("//*[@id=\"root\"]/div[2]/div[2]/div[2]/div/div[1]/div[2]/div/div[1]/div/div[2]/div/ul/li[5]/div/div/div/div/div[2]/div[1]/div[2]/div[1]/p[2]").textContent();
+	      String BookingID = BookingIDWithHash.replaceAll(".*#(\\d+).*", "$1"); 
+	      System.out.println("Extracted Booking ID: " + BookingID);
+	     
+	      adminBookingIdVerification(BookingID);
+
+	  }
+
+	  public void adminBookingIdVerification(String BookingID) {
+		  BrowserType.LaunchOptions launchOptions = new BrowserType.LaunchOptions()
+	              .setChannel("msedge")
+	              .setHeadless(ConfigReader.isHeadless());
+
+	      try (Browser edgeBrowser = playwright.chromium().launch(launchOptions);
+	           BrowserContext edgeContext = edgeBrowser.newContext();
+	           Page adminPage = edgeContext.newPage()) {
+
+
+	          adminPage.navigate(ConfigReader.getAdminUrl());
+	          adminPage.waitForLoadState();
+
+	          adminPage.getByPlaceholder("Enter Phone").fill(ConfigReader.getAdminTestMobileNumber());
+	          adminPage.getByPlaceholder("Enter Password").fill(ConfigReader.getAdminTestpasswd());
+	          adminPage.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Login")).click();
+
+	          adminPage.waitForLoadState();
+	          adminPage.waitForTimeout(3000); 
+
+	          String adminBookingText = adminPage.locator("tbody").textContent();
+	          System.out.println("Admin booking data: " + adminBookingText);
+
+	          assertThat(adminPage.locator("tbody")).containsText(BookingID);
+	          System.out.println(" Booking ID " + BookingID + " verified in admin dashboard");
+
+	      } catch (Exception e) {
+	          System.err.println(" Admin dashboard verification failed: " + e.getMessage());
+	          throw new RuntimeException("Admin verification failed", e);
+	      }
+	  }
+	    
 	  public void MRIBrainBook()
 	  {
+		     page.navigate(ConfigReader.getUatUrl());
+		     page.waitForLoadState();
 		     page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("MRI Scan").setExact(true)).click();
 		      page.getByText("Brain/Head").click();
 		      page.getByPlaceholder("Enter Full Name").fill("SIYADMRIBRAINTEST");
-		      page.getByPlaceholder("Enter Phone Number").fill("9778350198");
+		      page.getByPlaceholder("Enter Phone Number").fill(ConfigReader.getTestMobileNumber());
 		      page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Book an MRI Scan")).first().click();
-		      page.getByRole(AriaRole.TEXTBOX, new Page.GetByRoleOptions().setName("Enter OTP")).fill("1234");
+		      page.getByRole(AriaRole.TEXTBOX, new Page.GetByRoleOptions().setName("Enter OTP")).fill(ConfigReader.getTestOTP());
 		      page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Proceed")).click();
 		      page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Submit")).click();
 		      assertThat(page.locator("body")).containsText("Booking Confirmed!");
-		      page.locator("button").filter(new Locator.FilterOptions().setHasText("Back to Home")).first().click();
+		      page.getByText("View my Booking").first().click();
+
+		      String brainBookingIDWithHash = page.locator("//*[@id=\"root\"]/div[2]/div[2]/div[2]/div/div[1]/div[2]/div/div[1]/div/div[2]/div/ul/li[5]/div/div/div/div/div[2]/div[1]/div[2]/div[1]/p[2]").textContent();
+		      String BookingID = brainBookingIDWithHash.replaceAll(".*#(\\d+).*", "$1"); 
+		      System.out.println("Extracted Booking ID: " + BookingID);
+		     
+		      adminBookingIdVerification(BookingID);
+
+		     
 	  }
 	  public void CervicalSpineBook()
 	  {
+		  page.navigate(ConfigReader.getUatUrl());
 		  page.waitForLoadState();
 	      page.locator("#root > div:nth-child(3) > div > div > div").first().click();
 	      page.getByText("Cervical Spine", new Page.GetByTextOptions().setExact(true)).click();
 	      assertThat(page.getByRole(AriaRole.MAIN)).containsText("Premium MRICervical Spine Scans");
 	      page.getByPlaceholder("Enter Full Name").fill("SIYADMRICRVICAL");
-	      page.getByPlaceholder("Enter Phone Number").fill("9778350198");
+	      page.getByPlaceholder("Enter Phone Number").fill(ConfigReader.getTestMobileNumber());
 	      page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Book an MRI Scan")).first().click();
-	      page.getByRole(AriaRole.TEXTBOX, new Page.GetByRoleOptions().setName("Enter OTP")).fill("1234");
+	      page.getByRole(AriaRole.TEXTBOX, new Page.GetByRoleOptions().setName("Enter OTP")).fill(ConfigReader.getTestOTP());
 	      page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Proceed")).click();
 	      page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Submit")).click();
 	      assertThat(page.locator("body")).containsText("Booking Confirmed!");
-	      page.locator("button").filter(new Locator.FilterOptions().setHasText("Back to Home")).first().click();
+	      page.getByText("View my Booking").first().click();
+
+		  String CervicalSpineBookingIDWithHash = page.locator("//*[@id=\"root\"]/div[2]/div[2]/div[2]/div/div[1]/div[2]/div/div[1]/div/div[2]/div/ul/li[5]/div/div/div/div/div[2]/div[1]/div[2]/div[1]/p[2]").textContent();
+		  String BookingID = CervicalSpineBookingIDWithHash.replaceAll(".*#(\\d+).*", "$1"); 
+		  System.out.println("Extracted Booking ID: " + BookingID);
+		 
+		  adminBookingIdVerification(BookingID);
+
 		  
 	  }
 	  public void KneeMRIBook()
@@ -186,13 +257,20 @@ public class BMSPage {
 	      assertThat(page.getByRole(AriaRole.MAIN)).containsText("Premium MRIKnee Scans");
 	      page.locator(".MuiStack-root > div > div > svg").first().click();
 	      page.getByPlaceholder("Enter Full Name").fill("SiyadMRIKNNEE");
-	      page.getByPlaceholder("Enter Phone Number").fill("9778350198");
+	      page.getByPlaceholder("Enter Phone Number").fill(ConfigReader.getTestMobileNumber());
 	      page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Book an MRI Scan")).first().click();
-	      page.getByRole(AriaRole.TEXTBOX, new Page.GetByRoleOptions().setName("Enter OTP")).fill("1234");
+	      page.getByRole(AriaRole.TEXTBOX, new Page.GetByRoleOptions().setName("Enter OTP")).fill(ConfigReader.getTestOTP());
 	      page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Proceed")).click();
 	      page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Submit")).click();
 	      assertThat(page.locator("body")).containsText("Booking Confirmed!");
-	      page.locator("button").filter(new Locator.FilterOptions().setHasText("Back to Home")).first().click();
+	      page.getByText("View my Booking").first().click();
+	      
+	      String KneeMRIBookingIDWithHash = page.locator("//*[@id=\"root\"]/div[2]/div[2]/div[2]/div/div[1]/div[2]/div/div[1]/div/div[2]/div/ul/li[5]/div/div/div/div/div[2]/div[1]/div[2]/div[1]/p[2]").textContent();
+		  String BookingID = KneeMRIBookingIDWithHash.replaceAll(".*#(\\d+).*", "$1"); 
+		  System.out.println("Extracted Booking ID: " + BookingID);
+		 
+		  adminBookingIdVerification(BookingID);
+
 	  }
 	  public void LSSpineMRIBook()
 	  {
@@ -202,13 +280,20 @@ public class BMSPage {
 	      assertThat(page.getByRole(AriaRole.MAIN)).containsText("Premium MRILS Spine Scans");
 	      page.getByPlaceholder("Enter Full Name").fill("SIYADMRILSSPAINE");
 	      page.locator(".MuiStack-root > div > div:nth-child(2)").first().click();
-	      page.getByPlaceholder("Enter Phone Number").fill("9778350198");
+	      page.getByPlaceholder("Enter Phone Number").fill(ConfigReader.getTestMobileNumber());
 	      page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Book an MRI Scan")).first().click();
-	      page.getByRole(AriaRole.TEXTBOX, new Page.GetByRoleOptions().setName("Enter OTP")).fill("1234");
+	      page.getByRole(AriaRole.TEXTBOX, new Page.GetByRoleOptions().setName("Enter OTP")).fill(ConfigReader.getTestOTP());
 	      page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Proceed")).click();
 	      page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Submit")).click();
 	      assertThat(page.locator("body")).containsText("Booking Confirmed!");
-	      page.locator("button").filter(new Locator.FilterOptions().setHasText("Back to Home")).first().click();
+          page.getByText("View my Booking").first().click();
+ 	      
+	      String LSSPineMRIBookingIDWithHash = page.locator("//*[@id=\"root\"]/div[2]/div[2]/div[2]/div/div[1]/div[2]/div/div[1]/div/div[2]/div/ul/li[5]/div/div/div/div/div[2]/div[1]/div[2]/div[1]/p[2]").textContent();
+		  String BookingID = LSSPineMRIBookingIDWithHash.replaceAll(".*#(\\d+).*", "$1"); 
+		  System.out.println("Extracted Booking ID: " + BookingID);
+		 
+		  adminBookingIdVerification(BookingID);
+
 	      
 	  }
 	  public void MRIShoulderBook()
@@ -218,112 +303,166 @@ public class BMSPage {
 	      page.getByText("Shoulder", new Page.GetByTextOptions().setExact(true)).click();
 	      assertThat(page.getByRole(AriaRole.MAIN)).containsText("Premium MRIShoulder Scans");
 	      page.getByPlaceholder("Enter Full Name").fill("SIYADMRISHOULDER");
-	      page.getByPlaceholder("Enter Phone Number").fill("9778350198");
+	      page.getByPlaceholder("Enter Phone Number").fill(ConfigReader.getTestMobileNumber());
 	      page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Book an MRI Scan")).first().click();
-	      page.getByRole(AriaRole.TEXTBOX, new Page.GetByRoleOptions().setName("Enter OTP")).fill("1234");
+	      page.getByRole(AriaRole.TEXTBOX, new Page.GetByRoleOptions().setName("Enter OTP")).fill(ConfigReader.getTestOTP());
 	      page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Proceed")).click();
 	      page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Submit")).click();
 	      assertThat(page.locator("body")).containsText("Booking Confirmed!");
-	      page.locator("button").filter(new Locator.FilterOptions().setHasText("Back to Home")).first().click();
-	      
+          page.getByText("View my Booking").first().click();
+ 	      
+	      String ShoulderMRIBookingIDWithHash = page.locator("//*[@id=\"root\"]/div[2]/div[2]/div[2]/div/div[1]/div[2]/div/div[1]/div/div[2]/div/ul/li[5]/div/div/div/div/div[2]/div[1]/div[2]/div[1]/p[2]").textContent();
+		  String BookingID = ShoulderMRIBookingIDWithHash.replaceAll(".*#(\\d+).*", "$1"); 
+		  System.out.println("Extracted Booking ID: " + BookingID);
+		 
+		  adminBookingIdVerification(BookingID);	      
 	  }
 	  public void CTbook() throws Exception
 	  {
+		  page.navigate(ConfigReader.getUatUrl());
 		  page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("CT Scan")).click();
-	      page.getByText("CT Scans", new Page.GetByTextOptions().setExact(true)).click();
+	      page.getByText("CT Scans", new Page.GetByTextOptions().setExact(true)).first().click();
 	      assertThat(page.getByRole(AriaRole.MAIN)).containsText("Premium CT Scans");
 	      page.getByPlaceholder("Enter Full Name").fill("SIYADCTSCANTest");
-	      page.getByPlaceholder("Enter Phone Number").fill("9778350198");
+	      page.getByPlaceholder("Enter Phone Number").fill(ConfigReader.getTestMobileNumber());
 	      page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Book a CT Scan")).first().click();
 	      page.getByRole(AriaRole.TEXTBOX, new Page.GetByRoleOptions().setName("Enter OTP")).click();
-	      page.getByRole(AriaRole.TEXTBOX, new Page.GetByRoleOptions().setName("Enter OTP")).fill("1234");
+	      page.getByRole(AriaRole.TEXTBOX, new Page.GetByRoleOptions().setName("Enter OTP")).fill(ConfigReader.getTestOTP());
 	      page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Proceed")).click();
 	      page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Submit")).click();
 	      assertThat(page.locator("body")).containsText("Booking Confirmed!");
-	      page.locator("button").filter(new Locator.FilterOptions().setHasText("Back to Home")).first().click();
+          page.getByText("View my Booking").first().click();
+ 	      
+	      String CTBookingIDWithHash = page.locator("//*[@id=\"root\"]/div[2]/div[2]/div[2]/div/div[1]/div[2]/div/div[1]/div/div[2]/div/ul/li[5]/div/div/div/div/div[2]/div[1]/div[2]/div[1]/p[2]").textContent();
+		  String BookingID = CTBookingIDWithHash.replaceAll(".*#(\\d+).*", "$1"); 
+		  System.out.println("Extracted Booking ID: " + BookingID);
+		 
+		  adminBookingIdVerification(BookingID);
 	  }
 	  public void CTAdbomenBook() throws Exception
 	  {
+		  page.navigate(ConfigReader.getUatUrl());
 		  page.waitForLoadState();
 		  page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("CT Scan").setExact(true)).click();
 	      page.getByText("Abdomen & Pelvis", new Page.GetByTextOptions().setExact(true)).click();
 	      page.getByPlaceholder("Enter Full Name").fill("CTAbdomenTest");
 	      page.getByPlaceholder("Enter Phone Number").click();
-	      page.getByPlaceholder("Enter Phone Number").fill("9778350198");
+	      page.getByPlaceholder("Enter Phone Number").fill(ConfigReader.getTestMobileNumber());
 	      page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Book a CT Scan")).first().click();
 	      page.locator(".MuiStack-root > div:nth-child(3)").first().click();
-	      page.getByRole(AriaRole.TEXTBOX, new Page.GetByRoleOptions().setName("Enter OTP")).fill("1234");
+	      page.getByRole(AriaRole.TEXTBOX, new Page.GetByRoleOptions().setName("Enter OTP")).fill(ConfigReader.getTestOTP());
 	      page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Proceed")).waitFor(new Locator.WaitForOptions().setState(WaitForSelectorState.VISIBLE));
 	      page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Proceed")).click();
-	      page.waitForSelector("[role='button']:has-text('Submit')", new Page.WaitForSelectorOptions().setState(WaitForSelectorState.VISIBLE));
+	      page.waitForLoadState();
 	      page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Submit")).click();
 	      assertThat(page.locator("body")).containsText("Booking Confirmed!");
-	      page.locator("button").filter(new Locator.FilterOptions().setHasText("Back to Home")).first().click();
+          page.getByText("View my Booking").first().click();
+ 	      
+	      String CTAbdomenBookingIDWithHash = page.locator("//*[@id=\"root\"]/div[2]/div[2]/div[2]/div/div[1]/div[2]/div/div[1]/div/div[2]/div/ul/li[5]/div/div/div/div/div[2]/div[1]/div[2]/div[1]/p[2]").textContent();
+		  String BookingID = CTAbdomenBookingIDWithHash.replaceAll(".*#(\\d+).*", "$1"); 
+		  System.out.println("Extracted Booking ID: " + BookingID);
+		 
+		  adminBookingIdVerification(BookingID);
 	    }
 	  
 	  public void CTBrainScanBook() throws Exception
 	  {
+		  page.navigate(ConfigReader.getUatUrl());
 		  page.waitForLoadState();
 		  page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("CT Scan").setExact(true)).click();
 		  page.getByText("Brain", new Page.GetByTextOptions().setExact(true)).click();
 	      page.getByPlaceholder("Enter Full Name").fill("SIYADCTBRAIN");
 	      page.locator(".MuiStack-root > div > div:nth-child(2)").first().click();
-	      page.getByPlaceholder("Enter Phone Number").fill("9778350198");
+	      page.getByPlaceholder("Enter Phone Number").fill(ConfigReader.getTestMobileNumber());
 	      page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Book a CT Scan")).first().click();
-	      page.getByRole(AriaRole.TEXTBOX, new Page.GetByRoleOptions().setName("Enter OTP")).fill("1234");
+	      page.getByRole(AriaRole.TEXTBOX, new Page.GetByRoleOptions().setName("Enter OTP")).fill(ConfigReader.getTestOTP());
 	      page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Proceed")).waitFor(new Locator.WaitForOptions().setState(WaitForSelectorState.VISIBLE));
 	      page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Proceed")).click();
-	      page.waitForSelector("[role='button']:has-text('Submit')", new Page.WaitForSelectorOptions().setState(WaitForSelectorState.VISIBLE));
+	      page.waitForLoadState();
 	      page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Submit")).click();
 	      assertThat(page.locator("body")).containsText("Booking Confirmed!");
-	      page.locator("button").filter(new Locator.FilterOptions().setHasText("Back to Home")).first().click();
+          page.getByText("View my Booking").first().click();
+
+	      String CTBrainBookingIDWithHash = page.locator("//*[@id=\"root\"]/div[2]/div[2]/div[2]/div/div[1]/div[2]/div/div[1]/div/div[2]/div/ul/li[5]/div/div/div/div/div[2]/div[1]/div[2]/div[1]/p[2]").textContent();
+		  String BookingID = CTBrainBookingIDWithHash.replaceAll(".*#(\\d+).*", "$1"); 
+		  System.out.println("Extracted Booking ID: " + BookingID);
+		 
+		  adminBookingIdVerification(BookingID);
 	  }
 	  public void CTChestScanBook() throws Exception
 	  {
+		  page.navigate(ConfigReader.getUatUrl());
+          page.waitForLoadState();
 		  page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("CT Scan").setExact(true)).click();
 	      page.getByText("Chest", new Page.GetByTextOptions().setExact(true)).click();
 	      assertThat(page.getByRole(AriaRole.MAIN)).containsText("Premium CTChest Scans");
 	      page.getByPlaceholder("Enter Full Name").fill("SIYADCTCHEST");
-	      page.getByPlaceholder("Enter Phone Number").fill("9778350198");
+	      page.getByPlaceholder("Enter Phone Number").fill(ConfigReader.getTestMobileNumber());
 	      page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Book a CT Scan")).first().click();
-	      page.getByRole(AriaRole.TEXTBOX, new Page.GetByRoleOptions().setName("Enter OTP")).fill("1234");
+	      page.getByRole(AriaRole.TEXTBOX, new Page.GetByRoleOptions().setName("Enter OTP")).fill(ConfigReader.getTestOTP());
 	      page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Proceed")).waitFor(new Locator.WaitForOptions().setState(WaitForSelectorState.VISIBLE));
 	      page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Proceed")).click();
-	      page.waitForSelector("[role='button']:has-text('Submit')", new Page.WaitForSelectorOptions().setState(WaitForSelectorState.VISIBLE));
+	      page.waitForLoadState();
 	      page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Submit")).click();
 	      assertThat(page.locator("body")).containsText("Booking Confirmed!");
-	      page.locator("button").filter(new Locator.FilterOptions().setHasText("Back to Home")).first().click();
+	      page.getByText("View my Booking").first().click();
+
+	      String CTChestBookingIDWithHash = page.locator("//*[@id=\"root\"]/div[2]/div[2]/div[2]/div/div[1]/div[2]/div/div[1]/div/div[2]/div/ul/li[5]/div/div/div/div/div[2]/div[1]/div[2]/div[1]/p[2]").textContent();
+		  String BookingID = CTChestBookingIDWithHash.replaceAll(".*#(\\d+).*", "$1"); 
+		  System.out.println("Extracted Booking ID: " + BookingID);
+		 
+		  adminBookingIdVerification(BookingID);
+          
 	  }
 	  public void CTNeckScanBook() throws Exception
 	  {
+		  page.navigate(ConfigReader.getUatUrl());
+		  page.waitForLoadState();
 		  page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("CT Scan").setExact(true)).click();
 	      page.getByText("Neck", new Page.GetByTextOptions().setExact(true)).click();
 	      assertThat(page.getByRole(AriaRole.MAIN)).containsText("Premium CTNeck Scans");
+	      page.getByPlaceholder("Enter Full Name").click();
 	      page.getByPlaceholder("Enter Full Name").fill("SIYADCTNECK");
-	      page.getByPlaceholder("Enter Phone Number").fill("9778350198");
+	      page.getByPlaceholder("Enter Phone Number").fill(ConfigReader.getTestMobileNumber());
 	      page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Book a CT Scan")).first().click();
-	      page.getByRole(AriaRole.TEXTBOX, new Page.GetByRoleOptions().setName("Enter OTP")).fill("1234");
+	      page.getByRole(AriaRole.TEXTBOX, new Page.GetByRoleOptions().setName("Enter OTP")).fill(ConfigReader.getTestOTP());
 	      page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Proceed")).waitFor(new Locator.WaitForOptions().setState(WaitForSelectorState.VISIBLE));
 	      page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Proceed")).click();
-	      page.waitForSelector("[role='button']:has-text('Submit')", new Page.WaitForSelectorOptions().setState(WaitForSelectorState.VISIBLE));
+	      page.waitForLoadState();
 	      page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Submit")).click();
 	      assertThat(page.locator("body")).containsText("Booking Confirmed!");
-	      page.locator("button").filter(new Locator.FilterOptions().setHasText("Back to Home")).first().click();
+	      page.getByText("View my Booking").first().click();
+
+	      String CTNeckBookingIDWithHash = page.locator("//*[@id=\"root\"]/div[2]/div[2]/div[2]/div/div[1]/div[2]/div/div[1]/div/div[2]/div/ul/li[5]/div/div/div/div/div[2]/div[1]/div[2]/div[1]/p[2]").textContent();
+		  String BookingID = CTNeckBookingIDWithHash.replaceAll(".*#(\\d+).*", "$1"); 
+		  System.out.println("Extracted Booking ID: " + BookingID);
+		 
+		  adminBookingIdVerification(BookingID);
 	  }
 	  public void CTPNSSCanBook() throws Exception
 	  {
+		  page.navigate(ConfigReader.getUatUrl());
+          page.waitForLoadState();
 		    page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("CT Scan").setExact(true)).click();
 		      page.getByText("PNS (Paranasal Sinuses)").click();
 		      assertThat(page.getByRole(AriaRole.MAIN)).containsText("Premium CTPNS (Paranasal Sinuses) Scans");
+		      page.getByPlaceholder("Enter Full Name").click();
 		      page.getByPlaceholder("Enter Full Name").fill("SIYADCTPNS");
-		      page.getByPlaceholder("Enter Phone Number").fill("9778350198");
+		      page.getByPlaceholder("Enter Phone Number").fill(ConfigReader.getTestMobileNumber());
 		      page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Book a CT Scan")).first().click();
-		      page.getByRole(AriaRole.TEXTBOX, new Page.GetByRoleOptions().setName("Enter OTP")).fill("1234");
+		      page.getByRole(AriaRole.TEXTBOX, new Page.GetByRoleOptions().setName("Enter OTP")).fill(ConfigReader.getTestOTP());
 		      page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Proceed")).waitFor(new Locator.WaitForOptions().setState(WaitForSelectorState.VISIBLE));
 		      page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Proceed")).click();
+		      page.waitForLoadState();
 		      page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Submit")).click();
 		      assertThat(page.locator("body")).containsText("Booking Confirmed!");
-		      page.locator("button").filter(new Locator.FilterOptions().setHasText("Back to Home")).first().click();
+		      page.getByText("View my Booking").first().click();
+
+		      String CTPNSBookingIDWithHash = page.locator("//*[@id=\"root\"]/div[2]/div[2]/div[2]/div/div[1]/div[2]/div/div[1]/div/div[2]/div/ul/li[5]/div/div/div/div/div[2]/div[1]/div[2]/div[1]/p[2]").textContent();
+			  String BookingID = CTPNSBookingIDWithHash.replaceAll(".*#(\\d+).*", "$1"); 
+			  System.out.println("Extracted Booking ID: " + BookingID);
+			 
+			  adminBookingIdVerification(BookingID);
 		     }
 	  
 	  public void PETCTBook() throws Exception
@@ -334,9 +473,9 @@ public class BMSPage {
 		  page.locator("//*[@id=\"root\"]/main/div[2]/div/div[3]/div[1]/div[1]/div[3]/p").click();
 		  page.waitForLoadState();
 	      page.getByPlaceholder("Enter Full Name").fill("SIYADDPETTEST");
-	      page.getByPlaceholder("Enter Phone Number").fill("9778350197");
+	      page.getByPlaceholder("Enter Phone Number").fill(ConfigReader.getTestMobileNumber());
 	      page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Book a PET-CT Scan")).click();
-	      page.getByRole(AriaRole.TEXTBOX, new Page.GetByRoleOptions().setName("Enter OTP")).fill("1234");
+	      page.getByRole(AriaRole.TEXTBOX, new Page.GetByRoleOptions().setName("Enter OTP")).fill(ConfigReader.getTestOTP());
 	      page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Proceed")).click();
 	      page.getByPlaceholder("Select date").first().fill("2025-10-30");
 	      page.getByRole(AriaRole.TEXTBOX, new Page.GetByRoleOptions().setName("Select time")).click();
@@ -344,6 +483,13 @@ public class BMSPage {
 	      page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Submit")).click();
 	      assertThat(page.locator("body")).containsText("Booking Confirmed!");
 	      page.getByText("View my Booking").first().click();
+
+	      String PETCTBookingIDWithHash = page.locator("//*[@id=\"root\"]/div[2]/div[2]/div[2]/div/div[1]/div[2]/div/div[1]/div/div[2]/div/ul/li[5]/div/div/div/div/div[2]/div[1]/div[2]/div[1]/p[2]").textContent();
+		  String BookingID = PETCTBookingIDWithHash.replaceAll(".*#(\\d+).*", "$1"); 
+		  System.out.println("Extracted Booking ID: " + BookingID);
+		 
+		  adminBookingIdVerification(BookingID);
+	     
 	  }
 	  public void EditMobileLogin() throws Exception
 	  {
@@ -353,7 +499,7 @@ public class BMSPage {
 		  page.locator("//*[@id=\"root\"]/div[2]/div[2]/div[1]/div/div[2]/div[3]/div/div[2]/div/button").click();
 		   page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Login/ Sign Up")).click();
 		      page.getByPlaceholder("Enter Mobile Number").click();
-		      page.getByPlaceholder("Enter Mobile Number").fill("9778350198");
+		      page.getByPlaceholder("Enter Mobile Number").fill(ConfigReader.getTestMobileNumber());
 		      page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Send OTP")).click();
 		      page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Edit Mobile Number")).click();
 		      assertThat(page.getByPlaceholder("Enter Mobile Number")).isVisible();
@@ -362,9 +508,12 @@ public class BMSPage {
 	  {
 		  page.waitForLoadState();
 		  page.getByPlaceholder("Enter Mobile Number").click();
-	      page.getByPlaceholder("Enter Mobile Number").fill("9778350198");
+	      page.getByPlaceholder("Enter Mobile Number").fill(ConfigReader.getTestMobileNumber());
 	      page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Send OTP")).click();
-	      assertThat(page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Resend OTP"))).isVisible();
+	      page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Resend OTP")).waitFor(new Locator.WaitForOptions() .setState(WaitForSelectorState.VISIBLE).setTimeout(30_000));
+
+	    	assertThat(page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Resend OTP"))).isVisible();
+
 	  }
 	  public void InvalidOTP() throws Exception
 	  {
@@ -373,7 +522,7 @@ public class BMSPage {
 		  page.locator("//*[@id=\"root\"]/header/div[2]/div/div/div[2]/div[4]/button").click();
 		  page.waitForLoadState();
 		  page.getByPlaceholder("Enter Mobile Number").click();
-	      page.getByPlaceholder("Enter Mobile Number").fill("9778350198");
+	      page.getByPlaceholder("Enter Mobile Number").fill(ConfigReader.getTestMobileNumber());
 	      page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Send OTP")).click();
 	      page.getByRole(AriaRole.TEXTBOX).first().fill("0");
 	      page.getByRole(AriaRole.TEXTBOX).nth(1).fill("0");
@@ -427,12 +576,13 @@ public class BMSPage {
 	      page.locator("#packages-section > div.MuiBox-root.css-1ovdh1d > div.MuiBox-root.css-1s6xsst > p").scrollIntoViewIfNeeded();
 	      page.locator("//*[@id=\"packages-section\"]/div[1]/div[2]/div/div[1]/div/div[3]/div/button").click();
 	      page.waitForLoadState();
-	      page.locator("//*[contains(@class,'MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary css-f8w344')]").click();
+	      page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Proceed")).click();
+	      page.getByPlaceholder("Name").click();
 	      page.getByPlaceholder("Name").fill("SIYADMHC1");
-	      page.getByPlaceholder("Email").fill("siyadnissar2003@gmail.com");
-	      page.getByPlaceholder("Mobile Number").fill("9778350198");
+	      page.getByPlaceholder("Email").fill(ConfigReader.getTestEmail());
+	      page.getByPlaceholder("Mobile Number").fill(ConfigReader.getTestMobileNumber());
 	      page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Generate OTP")).click();
-	      page.getByPlaceholder("OTP").fill("1234");
+	      page.getByPlaceholder("OTP").fill(ConfigReader.getTestOTP());
 	      page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Verify OTP")).click();
 	      page.getByPlaceholder("Age").fill("22");
 	      page.getByText("Select Gender").click();
@@ -441,29 +591,34 @@ public class BMSPage {
 	      page.getByPlaceholder("Pincode").click();
 	      page.getByPlaceholder("Pincode").fill("464646");
 	      page.waitForLoadState();
-	      page.locator("body > div.MuiModal-root.css-8ndowl > div.MuiStack-root.css-j7qwjs > div > div > div.MuiStack-root.css-f17gpc > div.MuiStack-root.css-12qqwrw > div.MuiStack-root.css-1soff24 > button.MuiButtonBase-root.MuiButton-root.MuiButton-text.MuiButton-textPrimary.MuiButton-sizeMedium.MuiButton-textSizeMedium.MuiButton-colorPrimary.MuiButton-root.MuiButton-text.MuiButton-textPrimary.MuiButton-sizeMedium.MuiButton-textSizeMedium.MuiButton-colorPrimary.css-f8w344").click();
-	      page.locator("body > div.MuiModal-root.css-8ndowl > div.MuiStack-root.css-j7qwjs > div > div > div.MuiStack-root.css-1lw5nbc > div.MuiStack-root.css-un51iw > div.MuiStack-root.css-hr4ofn > button").click();
-	      page.locator("body > div.MuiModal-root.css-8ndowl > div.MuiStack-root.css-j7qwjs > div > div > div.MuiStack-root.css-1lw5nbc > div.MuiStack-root.css-un51iw > div.MuiStack-root.css-hiw9ve > div.MuiStack-root.css-v0zhh > div > div:nth-child(1) > div > p").click();
-	      page.locator("body > div.MuiModal-root.css-8ndowl > div.MuiStack-root.css-j7qwjs > div > div > div.MuiStack-root.css-1lw5nbc > div.MuiStack-root.css-un51iw > div.MuiStack-root.css-hr4ofn > button").click();
+	      page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Proceed")).click();
+	      page.locator("div").filter(new Locator.FilterOptions().setHasText(Pattern.compile("^Proceed$"))).click();
+	      page.locator(".PrivateSwitchBase-input").first().check();
+	      page.locator("div").filter(new Locator.FilterOptions().setHasText(Pattern.compile("^Review booking$"))).click();
 	      page.waitForLoadState();
+	      page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Confirm Booking")).click();
 	      assertThat(page.locator("body")).containsText("Master Health Checkup - Silver");
 	      page.getByLabel("Pay Later, Enquire Now").check();
-	      page.locator(".MuiStack-root > div:nth-child(2) > .MuiButtonBase-root").first().click();
-	    
+	      page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Confirm Booking")).click();
+	      page.getByText("View my Booking").first().click();
+
 	  }
 	  public void BookGoldMHCBook() throws Exception
 	  {
+		  page.navigate(ConfigReader.getUatUrl());
 		  page.waitForLoadState();
+	      page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Master Health Checkup")).click();
+	      page.waitForLoadState();
 	      page.locator("#packages-section > div.MuiBox-root.css-1ovdh1d > div.MuiBox-root.css-1s6xsst > p").scrollIntoViewIfNeeded();
           page.locator("//*[@id=\"packages-section\"]/div[1]/div[2]/div/div[2]/div/div[3]/div/button").click();
           page.waitForLoadState();
           
           page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Proceed")).click();
 	      page.getByPlaceholder("Name").fill("SIYADMHC2");
-	      page.getByPlaceholder("Email").fill("siyadnissar2003@gmail.com");
-	      page.getByPlaceholder("Mobile Number").fill("9778350198");
+	      page.getByPlaceholder("Email").fill(ConfigReader.getTestEmail());
+	      page.getByPlaceholder("Mobile Number").fill(ConfigReader.getTestMobileNumber());
 	      page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Generate OTP")).click();
-	      page.getByPlaceholder("OTP").fill("1234");
+	      page.getByPlaceholder("OTP").fill(ConfigReader.getTestOTP());
 	      page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Verify OTP")).click();
 	      page.getByPlaceholder("Age").fill("22");
 	      page.getByText("Select Gender").click();
@@ -472,21 +627,53 @@ public class BMSPage {
 	      page.getByPlaceholder("Pincode").click();
 	      page.getByPlaceholder("Pincode").fill("464646");
 	      page.waitForLoadState();
-	      page.locator("body > div.MuiModal-root.css-8ndowl > div.MuiStack-root.css-j7qwjs > div > div > div.MuiStack-root.css-1lw5nbc > div.MuiStack-root.css-12qqwrw > div.MuiStack-root.css-1soff24 > button.MuiButtonBase-root.MuiButton-root.MuiButton-text.MuiButton-textPrimary.MuiButton-sizeMedium.MuiButton-textSizeMedium.MuiButton-colorPrimary.MuiButton-root.MuiButton-text.MuiButton-textPrimary.MuiButton-sizeMedium.MuiButton-textSizeMedium.MuiButton-colorPrimary.css-f8w344").click();
-	      page.locator("body > div.MuiModal-root.css-8ndowl > div.MuiStack-root.css-j7qwjs > div > div > div.MuiStack-root.css-1lw5nbc > div.MuiStack-root.css-un51iw > div.MuiStack-root.css-hr4ofn > button").click();
-	      page.locator("body > div.MuiModal-root.css-8ndowl > div.MuiStack-root.css-j7qwjs > div > div > div.MuiStack-root.css-1lw5nbc > div.MuiStack-root.css-un51iw > div.MuiStack-root.css-hiw9ve > div.MuiStack-root.css-v0zhh > div > div:nth-child(1) > div > p").click();
-	      page.locator("body > div.MuiModal-root.css-8ndowl > div.MuiStack-root.css-j7qwjs > div > div > div.MuiStack-root.css-1lw5nbc > div.MuiStack-root.css-un51iw > div.MuiStack-root.css-hr4ofn > button").click();
+	      page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Proceed")).click();
+	      page.locator("div").filter(new Locator.FilterOptions().setHasText(Pattern.compile("^Proceed$"))).click();
+	      page.locator(".PrivateSwitchBase-input").first().check();
+	      page.locator("div").filter(new Locator.FilterOptions().setHasText(Pattern.compile("^Review booking$"))).click();
+	      page.waitForLoadState();
+	      page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Confirm Booking")).click();
 	      page.waitForLoadState();
 	      assertThat(page.locator("body")).containsText("Master Health Checkup - Gold");
 	      page.getByLabel("Pay Later, Enquire Now").check();
-	      page.locator(".MuiStack-root > div:nth-child(2) > .MuiButtonBase-root").first().click();
-
+	      page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Confirm Booking")).click();
+	      page.getByText("View my Booking").first().click();
 	  }
 	  public void BookPlatinumMHCBook() throws Exception
 	  {
+		  page.navigate(ConfigReader.getUatUrl());
 		  page.waitForLoadState();
+	      page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Master Health Checkup")).click();
+	      page.waitForLoadState();
 	      page.locator("#packages-section > div.MuiBox-root.css-1ovdh1d > div.MuiBox-root.css-1s6xsst > p").scrollIntoViewIfNeeded();
 	      page.locator("//*[@id=\"packages-section\"]/div[1]/div[2]/div/div[3]/div/div[3]/div/button").click();
+	      page.waitForLoadState();
+	      page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Proceed")).click();
+	      page.getByPlaceholder("Name").fill("SIYADMHC2");
+	      page.getByPlaceholder("Email").fill(ConfigReader.getTestEmail());
+	      page.getByPlaceholder("Mobile Number").fill(ConfigReader.getTestMobileNumber());
+	      page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Generate OTP")).click();
+	      page.getByPlaceholder("OTP").fill(ConfigReader.getTestOTP());
+	      page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Verify OTP")).click();
+	      page.getByPlaceholder("Age").fill("22");
+	      page.getByText("Select Gender").click();
+	      page.getByRole(AriaRole.OPTION, new Page.GetByRoleOptions().setName("Male").setExact(true)).click();
+	      page.getByPlaceholder("Address").fill("scdcdcdcs");
+	      page.getByPlaceholder("Pincode").click();
+	      page.getByPlaceholder("Pincode").fill("464646");
+	      page.waitForLoadState();
+	      
+	      page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Proceed")).click();
+	      page.locator("div").filter(new Locator.FilterOptions().setHasText(Pattern.compile("^Proceed$"))).click();
+	      page.locator(".PrivateSwitchBase-input").first().check();
+	      page.locator("div").filter(new Locator.FilterOptions().setHasText(Pattern.compile("^Review booking$"))).click();
+	      page.waitForLoadState();
+	      page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Confirm Booking")).click();
+	      page.waitForLoadState();
+	      assertThat(page.locator("body")).containsText("Master Health Checkup - Platinum");
+	      page.getByLabel("Pay Later, Enquire Now").check();
+	      page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Confirm Booking")).click();
+	      page.getByText("View my Booking").first().click();
 	  }
 	   
 	  public void XRAYBook() throws Exception
@@ -499,7 +686,7 @@ public class BMSPage {
           page.locator("#root > main > div.MuiStack-root.t3-main-container.css-1xbe40y > div.MuiStack-root.css-aiww9g > div.MuiStack-root.css-pdv2i8 > div > div > div > div.MuiStack-root.css-cy91f0 > div.MuiStack-root.css-17bqjow > div.MuiStack-root.css-c98prh > div > div:nth-child(1) > div > div > div.MuiGrid-root.MuiGrid-item.MuiGrid-grid-lg-12.css-ucashc > div.MuiStack-root.css-ooasvr > div > button > p > p").first().click();
 	      page.waitForLoadState();
 	      page.getByRole(AriaRole.TEXTBOX, new Page.GetByRoleOptions().setName("Enter Full Name")).fill("SIYADTEST");
-	      page.getByRole(AriaRole.TEXTBOX, new Page.GetByRoleOptions().setName("Enter Phone Number")).fill("9778350198");
+	      page.getByRole(AriaRole.TEXTBOX, new Page.GetByRoleOptions().setName("Enter Phone Number")).fill(ConfigReader.getTestMobileNumber());
 	      page.getByPlaceholder("Select time slot").last().click();
 	      page.waitForLoadState();
 	      Locator slot = page.locator("body > div.MuiBox-root.css-1dvep9k > div.MuiBox-root.css-19p0syp");
@@ -529,7 +716,7 @@ public class BMSPage {
          
          Locator slot2=page.locator("body > div.MuiBox-root.css-16mjwcv > div.MuiBox-root.css-19p0syp");
          slot2.first().click();
-         
+         page.waitForLoadState();
          page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Add to Cart")).click();
          page.getByRole(AriaRole.IMG, new Page.GetByRoleOptions().setName("IMAGES.APP_BAR.CART_LOGO")).click();
          assertThat(page.locator("body")).containsText("USG");
@@ -616,7 +803,7 @@ public class BMSPage {
 
 
 
-
+ 
 
 
 

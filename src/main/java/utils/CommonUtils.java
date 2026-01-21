@@ -15,7 +15,7 @@ public class CommonUtils {
         } else {
             System.out.println("URL mismatch. Expected: " + 
                 expectedUrl + ", Actual: " + actualUrl);
-        }
+        } 
     }
     
     public static void verifyTitle(Page page, String expectedTitle) {

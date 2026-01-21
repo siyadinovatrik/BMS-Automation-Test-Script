@@ -10,7 +10,7 @@ public class BasePage {
     public BasePage(Page page) {
         this.page = page;
     }
-    
+     
     protected void waitForPageLoad() {
         WaitUtils.waitForPageLoad(page);
     }
